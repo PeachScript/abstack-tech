@@ -89,7 +89,7 @@ body {
   margin-left: -10px;
   border: 10px solid transparent;
   border-top-width: 0;
-  border-top-color: #eb7d7c;
+  border-top-color: #D6D6D6;
 }
 .header .navbar li:after {
   margin-left: -8px;
@@ -122,6 +122,7 @@ body {
 }
 .header .navbar li.active:before {
   border-top-width: 10px;
+  border-top-color: #eb7d7c;
 }
 .header .navbar li.active:after {
   border-top-width: 8px;

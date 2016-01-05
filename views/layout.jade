@@ -1,19 +1,19 @@
 doctype html
-html
+html(lang="zh-CN")
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/abstack.css')
+    title #{title?title + ' -': ''} 抽象科技
+    link(rel="stylesheet", href="/stylesheets/abstack.css")
   body
     .container.header
       a(href="/").logo
       ul.navbar
-        li.active
+        li(class=title?undefined: 'active')
           a(href="/") 首页
-        li
+        li(class=title=='观点'?'active': undefined)
           a(href="/viewpoint") 观点
-        li
+        li(class=title=='项目'?'active': undefined)
           a(href="/projects") 项目
-        li
+        li(class=title=='关于'?'active': undefined)
           a(href="/about") 关于
     block content
     .footer CopyRight &copy; 2015 抽象科技
