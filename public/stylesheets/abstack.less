@@ -1,0 +1,176 @@
+/*尺寸配置*/
+@screen-desktop: 1024px;
+@screen-tablet: 768px;
+@content-width: 1000px;
+/*颜色表*/
+@c-basic: #E45755;
+@c-red: #EB7D7C;
+
+html{
+  font-family: "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "sans-serif";
+}
+body{
+  margin: 0;
+}
+
+/*工具样式*/
+.clearfix{
+  &:after,&:before{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+.pos-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.container{
+  .pos-center;
+  width: @content-width;
+}
+
+/*头部*/
+.header{
+  position: relative;
+  .clearfix;
+  &:before{
+    position: absolute;
+    display: block;
+    top: 100%;
+    right: 0;
+    width: 80%;
+    height: 1px;
+    background-color: #D6D6D6;
+  }
+  .logo{
+    @size: 100px;
+    float: left;
+    margin-top: @size/3;
+    margin-bottom: -@size/3;
+    width: @size;
+    height: @size;
+    background-color: #fff;
+    .box-shadow(0 5px 10px rgba(0,0,0,.2));
+    .border-radius(50%);
+  }
+  .navbar{
+    list-style: none;
+    margin: 50px 0 0;
+    padding: 0;
+    float: right;
+    li{
+      @triangle-size: 10px;
+      position: relative;
+      float: left;
+      margin: -1px 25px;
+      font-size: 20px;
+      line-height: 20px;
+      border: 1px solid transparent;
+      &:after, &:before{
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        .transition(border .2s);
+      }
+      &:before{
+        margin-left: -@triangle-size;
+        border: @triangle-size solid transparent;
+        border-top-width: 0;
+        border-top-color: @c-red;
+      }
+      &:after{
+        margin-left: -@triangle-size + 2;
+        border: @triangle-size - 2 solid transparent;
+        border-top-width: 0;
+        border-top-color: #fff;
+      }
+      &:hover{
+        &:before{
+          border-top-width: @triangle-size;
+        }
+        &:after{
+          border-top-width: @triangle-size - 2;
+        }
+        a{
+          color: @c-red;
+        }
+      }
+      a{
+        display: block;
+        padding: 15px 12px;
+        color: #44494F;
+        text-decoration: none;
+        .transition(color .2s);
+      }
+      &.active{
+        border-color: @c-red;
+        &:before{
+          border-top-width: @triangle-size;
+        }
+        &:after{
+          border-top-width: @triangle-size - 2;
+        }
+        a{
+          color: @c-red;
+        }
+      }
+    }
+  }
+}
+/*版权部分*/
+.footer{
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  a{
+    margin: 0 3px;
+    display: inline-block;
+    color: #666;
+    text-decoration: none;
+    &:hover{
+      color: @c-basic;
+      text-decoration: underline;
+    }
+  }
+}
+
+/*函数类工具*/
+/*圆角*/
+.border-radius(@value){
+  -webkit-border-radius: @value;
+  -o-border-radius: @value;
+  -moz-border-radius: @value;
+  -ms-border-radius: @value;
+  border-radius: @value;
+}
+/*透明度*/
+.opacity(@value){
+  opacity: @value/100;
+  filter: ~"alpha(opacity=@{value})";
+}
+/*过渡*/
+.transition(@value){
+  -webkit-transition: @value;
+  -o-transition: @value;
+  -moz-transition: @value;
+  -ms-transition: @value;
+  transition: @value;
+}
+/*变换*/
+.transform(@value){
+  -webkit-transform: @value;
+  -o-transform: @value;
+  -moz-transform: @value;
+  -ms-transform: @value;
+  transform: @value;
+}
+/*盒子阴影*/
+.box-shadow(@value){
+  -webkit-box-shadow: @value;
+  -o-box-shadow: @value;
+  -moz-box-shadow: @value;
+  -ms-box-shadow: @value;
+  box-shadow: @value;
+}

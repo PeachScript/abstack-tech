@@ -1,0 +1,13 @@
+{
+  "name": "_new_release",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "~4.13.1",
+    "jade": "^1.11.0",
+    "morgan": "^1.6.1"
+  }
+}

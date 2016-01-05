@@ -1,0 +1,153 @@
+/*尺寸配置*/
+/*颜色表*/
+html {
+  font-family: "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "sans-serif";
+}
+body {
+  margin: 0;
+}
+/*工具样式*/
+.clearfix:after,
+.clearfix:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+.pos-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+}
+/*头部*/
+.header {
+  position: relative;
+}
+.header:after,
+.header:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+.header:before {
+  position: absolute;
+  display: block;
+  top: 100%;
+  right: 0;
+  width: 80%;
+  height: 1px;
+  background-color: #D6D6D6;
+}
+.header .logo {
+  float: left;
+  margin-top: 33.33333333px;
+  margin-bottom: -33.33333333px;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.header .navbar {
+  list-style: none;
+  margin: 50px 0 0;
+  padding: 0;
+  float: right;
+}
+.header .navbar li {
+  position: relative;
+  float: left;
+  margin: -1px 25px;
+  font-size: 20px;
+  line-height: 20px;
+  border: 1px solid transparent;
+}
+.header .navbar li:after,
+.header .navbar li:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transition: border 0.2s;
+  -o-transition: border 0.2s;
+  -moz-transition: border 0.2s;
+  -ms-transition: border 0.2s;
+  transition: border 0.2s;
+}
+.header .navbar li:before {
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-top-width: 0;
+  border-top-color: #eb7d7c;
+}
+.header .navbar li:after {
+  margin-left: -8px;
+  border: 8px solid transparent;
+  border-top-width: 0;
+  border-top-color: #fff;
+}
+.header .navbar li:hover:before {
+  border-top-width: 10px;
+}
+.header .navbar li:hover:after {
+  border-top-width: 8px;
+}
+.header .navbar li:hover a {
+  color: #eb7d7c;
+}
+.header .navbar li a {
+  display: block;
+  padding: 15px 12px;
+  color: #44494F;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.header .navbar li.active {
+  border-color: #eb7d7c;
+}
+.header .navbar li.active:before {
+  border-top-width: 10px;
+}
+.header .navbar li.active:after {
+  border-top-width: 8px;
+}
+.header .navbar li.active a {
+  color: #eb7d7c;
+}
+/*版权部分*/
+.footer {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+.footer a {
+  margin: 0 3px;
+  display: inline-block;
+  color: #666;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #e45755;
+  text-decoration: underline;
+}
+/*函数类工具*/
+/*圆角*/
+/*透明度*/
+/*过渡*/
+/*变换*/
+/*盒子阴影*/
