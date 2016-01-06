@@ -48,16 +48,23 @@ body {
   width: 100px;
   height: 100px;
   background-color: #fff;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -o-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -ms-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   -webkit-border-radius: 50%;
   -o-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+}
+.header .logo img {
+  margin-top: 5px;
+  margin-left: -8px;
+  display: block;
+  width: 100%;
+  pointer-events: none;
 }
 .header .navbar {
   list-style: none;
@@ -127,6 +134,7 @@ body {
 }
 /*版权部分*/
 .footer {
+  padding: 20px 0;
   text-align: center;
   font-size: 14px;
   line-height: 14px;
@@ -141,6 +149,44 @@ body {
 .footer a:hover {
   color: #e45755;
   text-decoration: underline;
+}
+/*首页*/
+.homepage-container {
+  margin-bottom: 60px;
+  border-bottom: 4px solid #e45755;
+}
+.homepage-container:after,
+.homepage-container:before {
+  content: '';
+  display: table;
+  clear: both;
+}
+.homepage-container .soldier,
+.homepage-container .abstack-text,
+.homepage-container .elephant {
+  float: left;
+  margin-bottom: -2px;
+}
+.homepage-container .soldier {
+  width: 160px;
+  height: 600px;
+  background: url('../images/soldier.png') no-repeat center bottom;
+}
+.homepage-container .abstack-text {
+  width: 340px;
+  height: 600px;
+  background: url('../images/abstack_name.png') no-repeat center 50%;
+}
+.homepage-container .elephant {
+  width: 500px;
+  height: 600px;
+  background: url('../images/elephant_machine.png') no-repeat center bottom;
+}
+.homepage-container .skyline {
+  margin-top: -16px;
+  margin-bottom: -4px;
+  height: 20px;
+  background: url('../images/skyline.png') #ffffff no-repeat center bottom;
 }
 /*项目页面*/
 .project-list-header {
@@ -206,6 +252,47 @@ body {
 }
 .project-list li a:hover h2 {
   color: #e45755;
+}
+/*观点样式*/
+.viewpoint-item {
+  margin: 30px 50px;
+  height: 300px;
+}
+.viewpoint-item h2 {
+  margin: 0 0 10px;
+  color: #646464;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: normal;
+}
+.viewpoint-item p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #666666;
+}
+.viewpoint-item.tools {
+  padding-right: 380px;
+  background: url('../images/viewpoint_tools.png') no-repeat right center;
+  background-size: auto 100%;
+}
+.viewpoint-item.tools h2 {
+  padding-top: 90px;
+}
+.viewpoint-item.ue {
+  padding-left: 420px;
+  background: url('../images/viewpoint_ue.png') no-repeat left center;
+  background-size: auto 100%;
+}
+.viewpoint-item.ue h2 {
+  padding-top: 120px;
+}
+.viewpoint-item.delivery {
+  padding-right: 460px;
+  background: url('../images/viewpoint_delivery.png') no-repeat right center;
+  background-size: auto 100%;
+}
+.viewpoint-item.delivery h2 {
+  padding-top: 120px;
 }
 /*函数类工具*/
 /*圆角*/

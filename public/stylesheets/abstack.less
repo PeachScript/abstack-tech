@@ -51,8 +51,15 @@ body{
     width: @size;
     height: @size;
     background-color: #fff;
-    .box-shadow(0 5px 10px rgba(0,0,0,.2));
+    .box-shadow(0 5px 10px rgba(0,0,0,.15));
     .border-radius(50%);
+    img{    
+      margin-top: 5px;
+      margin-left: -8px;
+      display: block;
+      width: 100%;
+      pointer-events: none;
+    }
   }
   .navbar{
     list-style: none;
@@ -121,6 +128,7 @@ body{
 }
 /*版权部分*/
 .footer{
+  padding: 20px 0;
   text-align: center;
   font-size: 14px;
   line-height: 14px;
@@ -134,6 +142,39 @@ body{
       color: @c-basic;
       text-decoration: underline;
     }
+  }
+}
+
+/*首页*/
+.homepage-container{
+  @item-height: 600px;
+  margin-bottom: 60px;
+  border-bottom: 4px solid @c-basic;
+  .clearfix;
+  .soldier, .abstack-text, .elephant{
+    float: left;
+    margin-bottom: -2px;
+  }
+  .soldier{
+    width: 160px;
+    height: @item-height;
+    background: url('../images/soldier.png') no-repeat center bottom;
+  }
+  .abstack-text{
+    width: 340px;
+    height: @item-height;
+    background: url('../images/abstack_name.png') no-repeat center 50%;
+  }
+  .elephant{
+    width: 500px;
+    height: @item-height;
+    background: url('../images/elephant_machine.png') no-repeat center bottom;
+  }
+  .skyline{
+    margin-top: -16px;
+    margin-bottom: -4px;
+    height: 20px;
+    background: url('../images/skyline.png') #fff no-repeat center bottom;
   }
 }
 
@@ -191,6 +232,48 @@ body{
           color: @c-basic;
         }
       }
+    }
+  }
+}
+
+/*观点样式*/
+.viewpoint-item{
+  margin: 30px 50px;
+  height: 300px;
+  h2{
+    margin: 0 0 10px;
+    color: #646464;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: normal;
+  }
+  p{
+    font-size: 14px;
+    line-height: 22px;
+    color: #666666;
+  }
+  &.tools{
+    padding-right: 380px;
+    background: url('../images/viewpoint_tools.png') no-repeat right center;
+    background-size: auto 100%;
+    h2{
+      padding-top: 90px;
+    }
+  }
+  &.ue{
+    padding-left: 420px;
+    background: url('../images/viewpoint_ue.png') no-repeat left center;
+    background-size: auto 100%;
+    h2{
+      padding-top: 120px;
+    }
+  }
+  &.delivery{
+    padding-right: 460px;
+    background: url('../images/viewpoint_delivery.png') no-repeat right center;
+    background-size: auto 100%;
+    h2{
+      padding-top: 120px;
     }
   }
 }
