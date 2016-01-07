@@ -1,6 +1,7 @@
 doctype html
 html(lang="zh-CN")
   head
+    meta(charset="UTF-8")
     title #{title?title + ' -': ''} 抽象科技
     link(rel="stylesheet", href="/stylesheets/abstack.css")
   body
@@ -19,4 +20,4 @@ html(lang="zh-CN")
     block content
     block footer
       .footer CopyRight &copy; 2016 抽象科技
-        a(href="http://www.miitbeian.gov.cn/") 浙ICP备13028152号-3
+        a(href="http://www.miitbeian.gov.cn/", target="_blank") 浙ICP备13028152号-3

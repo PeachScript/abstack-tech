@@ -29,6 +29,16 @@ body{
   .pos-center;
   width: @content-width;
 }
+.in-making{
+  margin: 100px auto;
+  height: 407px;
+  background: url('../images/in_making.png') no-repeat center center;
+}
+.not-found-elephant{
+  margin: 120px auto;
+  height: 558px;
+  background: url('../images/404.png') no-repeat center center;
+}
 
 /*头部*/
 .header{
@@ -111,6 +121,7 @@ body{
         text-decoration: none;
       }
       &.active{
+        background-color: #fff;
         border-color: @c-red;
         &:before{
           border-top-width: @triangle-size;

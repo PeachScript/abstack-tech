@@ -22,6 +22,16 @@ body {
   margin-right: auto;
   width: 1000px;
 }
+.in-making {
+  margin: 100px auto;
+  height: 407px;
+  background: url('../images/in_making.png') no-repeat center center;
+}
+.not-found-elephant {
+  margin: 120px auto;
+  height: 558px;
+  background: url('../images/404.png') no-repeat center center;
+}
 /*头部*/
 .header {
   position: relative;
@@ -120,6 +130,7 @@ body {
   text-decoration: none;
 }
 .header .navbar li.active {
+  background-color: #fff;
   border-color: #eb7d7c;
 }
 .header .navbar li.active:before {
