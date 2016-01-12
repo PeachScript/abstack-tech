@@ -247,11 +247,6 @@ body {
   position: relative;
   width: 340px;
   height: 600px;
-  -webkit-tranform-style: preserve-3d;
-  -o-tranform-style: preserve-3d;
-  -moz-tranform-style: preserve-3d;
-  -ms-tranform-style: preserve-3d;
-  tranform-style: preserve-3d;
 }
 .homepage-container .abstack-text.flipped .back {
   -webkit-transform: rotateY(0deg);
@@ -491,43 +486,180 @@ body {
 /*观点样式*/
 .viewpoint-item {
   margin: 30px 50px;
-  height: 300px;
+}
+.viewpoint-item:after,
+.viewpoint-item:before {
+  content: '';
+  display: table;
+  clear: both;
 }
 .viewpoint-item h2 {
-  margin: 0 0 10px;
+  margin: 0 0 35px;
   color: #646464;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 28px;
   font-weight: normal;
 }
 .viewpoint-item p {
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 30px;
   color: #666666;
 }
-.viewpoint-item.tools {
-  padding-right: 380px;
-  background: url('../images/viewpoint_tools.png') no-repeat right center;
-  background-size: auto 100%;
+.viewpoint-item .viewpoint-item-tools {
+  float: right;
+  position: relative;
+  margin-left: 20px;
 }
-.viewpoint-item.tools h2 {
-  padding-top: 90px;
+.viewpoint-item .viewpoint-item-tools .viewpoint-item-pic {
+  position: relative;
+  z-index: 1;
+  width: 483px;
+  height: 477px;
+  background-image: url(../images/viewpoint_tools.png);
+  background-repeat: no-repeat;
 }
-.viewpoint-item.ue {
-  padding-left: 420px;
-  background: url('../images/viewpoint_ue.png') no-repeat left center;
-  background-size: auto 100%;
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-tools .viewpoint-item-pic {
+    background-image: url(../images/viewpoint_tools@2x.png);
+    background-size: 483px 477px;
+  }
 }
-.viewpoint-item.ue h2 {
+.viewpoint-item .viewpoint-item-tools .fish {
+  position: absolute;
+  top: 60px;
+  right: -60px;
+  width: 109px;
+  height: 117px;
+  -webkit-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-animation: fish-shake cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate 2s;
+  -o-animation: fish-shake cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate 2s;
+  -moz-animation: fish-shake cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate 2s;
+  -ms-animation: fish-shake cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate 2s;
+  animation: fish-shake cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate 2s;
+  background-image: url(../images/viewpoint_fish.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-tools .fish {
+    background-image: url(../images/viewpoint_fish@2x.png);
+    background-size: 109px 117px;
+  }
+}
+.viewpoint-item .viewpoint-item-tools + h2 {
+  padding-top: 150px;
+}
+.viewpoint-item .viewpoint-item-ue {
+  position: relative;
+  float: left;
+  margin-right: 160px;
+}
+.viewpoint-item .viewpoint-item-ue .viewpoint-item-pic {
+  position: relative;
+  z-index: 1;
+  width: 466px;
+  height: 475px;
+  background-image: url(../images/viewpoint_ue.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-ue .viewpoint-item-pic {
+    background-image: url(../images/viewpoint_ue@2x.png);
+    background-size: 466px 475px;
+  }
+}
+.viewpoint-item .viewpoint-item-ue .sword {
+  position: absolute;
+  top: 123px;
+  right: -142px;
+  width: 317px;
+  height: 124px;
+  -webkit-transform-origin: left bottom;
+  -o-transform-origin: left bottom;
+  -moz-transform-origin: left bottom;
+  -ms-transform-origin: left bottom;
+  transform-origin: left bottom;
+  -webkit-animation: sword-wave cubic-bezier(0.77, 0, 0.175, 1) infinite alternate 1.6s;
+  -o-animation: sword-wave cubic-bezier(0.77, 0, 0.175, 1) infinite alternate 1.6s;
+  -moz-animation: sword-wave cubic-bezier(0.77, 0, 0.175, 1) infinite alternate 1.6s;
+  -ms-animation: sword-wave cubic-bezier(0.77, 0, 0.175, 1) infinite alternate 1.6s;
+  animation: sword-wave cubic-bezier(0.77, 0, 0.175, 1) infinite alternate 1.6s;
+  background-image: url(../images/viewpoint_sword.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-ue .sword {
+    background-image: url(../images/viewpoint_sword@2x.png);
+    background-size: 317px 124px;
+  }
+}
+.viewpoint-item .viewpoint-item-ue + h2 {
   padding-top: 120px;
 }
-.viewpoint-item.delivery {
-  padding-right: 460px;
-  background: url('../images/viewpoint_delivery.png') no-repeat right center;
-  background-size: auto 100%;
+.viewpoint-item .viewpoint-item-delivery {
+  position: relative;
+  float: right;
+  margin-left: 20px;
 }
-.viewpoint-item.delivery h2 {
-  padding-top: 120px;
+.viewpoint-item .viewpoint-item-delivery .viewpoint-item-pic {
+  position: relative;
+  z-index: 1;
+  width: 570px;
+  height: 382px;
+  background-image: url(../images/viewpoint_delivery.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-delivery .viewpoint-item-pic {
+    background-image: url(../images/viewpoint_delivery@2x.png);
+    background-size: 570px 382px;
+  }
+}
+.viewpoint-item .viewpoint-item-delivery .material {
+  position: absolute;
+  top: 211px;
+  left: 160px;
+  width: 58px;
+  height: 62px;
+  -webkit-animation: material-transport linear 6s infinite;
+  -o-animation: material-transport linear 6s infinite;
+  -moz-animation: material-transport linear 6s infinite;
+  -ms-animation: material-transport linear 6s infinite;
+  animation: material-transport linear 6s infinite;
+  background-image: url(../images/viewpoint_material.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-delivery .material {
+    background-image: url(../images/viewpoint_material@2x.png);
+    background-size: 58px 62px;
+  }
+}
+.viewpoint-item .viewpoint-item-delivery .diamond {
+  position: absolute;
+  top: 20px;
+  right: 98px;
+  width: 35px;
+  height: 38px;
+  -webkit-animation: diamond-producing linear 6s infinite;
+  -o-animation: diamond-producing linear 6s infinite;
+  -moz-animation: diamond-producing linear 6s infinite;
+  -ms-animation: diamond-producing linear 6s infinite;
+  animation: diamond-producing linear 6s infinite;
+  background-image: url(../images/viewpoint_diamond.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-item .viewpoint-item-delivery .diamond {
+    background-image: url(../images/viewpoint_diamond@2x.png);
+    background-size: 35px 38px;
+  }
+}
+.viewpoint-item .viewpoint-item-delivery + h2 {
+  padding-top: 100px;
 }
 /*函数类工具*/
 /*圆角*/
@@ -535,6 +667,7 @@ body {
 /*过渡*/
 /*变换*/
 /*变换方式*/
+/*变换起点*/
 /*动画*/
 /*背面显示属性*/
 /*盒子阴影*/
@@ -854,5 +987,575 @@ body {
   }
   100% {
     width: 14px;
+  }
+}
+@-moz-keyframes fish-shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+@-o-keyframes fish-shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+@-ms-keyframes fish-shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+@-webkit-keyframes fish-shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+@keyframes fish-shake {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+  }
+}
+@-moz-keyframes sword-wave {
+  0% {
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-o-keyframes sword-wave {
+  0% {
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-ms-keyframes sword-wave {
+  0% {
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes sword-wave {
+  0% {
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes sword-wave {
+  0% {
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-moz-keyframes material-transport {
+  0% {
+    top: 211px;
+    left: 160px;
+  }
+  66.6666% {
+    top: 120px;
+    left: 426px;
+  }
+  100% {
+    top: 120px;
+    left: 426px;
+  }
+}
+@-o-keyframes material-transport {
+  0% {
+    top: 211px;
+    left: 160px;
+  }
+  66.6666% {
+    top: 120px;
+    left: 426px;
+  }
+  100% {
+    top: 120px;
+    left: 426px;
+  }
+}
+@-ms-keyframes material-transport {
+  0% {
+    top: 211px;
+    left: 160px;
+  }
+  66.6666% {
+    top: 120px;
+    left: 426px;
+  }
+  100% {
+    top: 120px;
+    left: 426px;
+  }
+}
+@-webkit-keyframes material-transport {
+  0% {
+    top: 211px;
+    left: 160px;
+  }
+  66.6666% {
+    top: 120px;
+    left: 426px;
+  }
+  100% {
+    top: 120px;
+    left: 426px;
+  }
+}
+@keyframes material-transport {
+  0% {
+    top: 211px;
+    left: 160px;
+  }
+  66.6666% {
+    top: 120px;
+    left: 426px;
+  }
+  100% {
+    top: 120px;
+    left: 426px;
+  }
+}
+@-moz-keyframes diamond-producing {
+  0% {
+    top: 20px;
+  }
+  10% {
+    top: 25px;
+  }
+  20% {
+    top: 20px;
+  }
+  30% {
+    top: 25px;
+  }
+  40% {
+    top: 20px;
+  }
+  50% {
+    top: 25px;
+  }
+  66.6666% {
+    top: 20px;
+    right: 98px;
+    width: 35px;
+    height: 38px;
+    background-image: url(../images/viewpoint_diamond.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    66.6666% {
+      background-image: url(../images/viewpoint_diamond@2x.png);
+      background-size: 35px 38px;
+    }
+  }
+  70% {
+    top: 10px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    70% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+  80% {
+    top: 20px;
+  }
+  90% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    100% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+}
+@-o-keyframes diamond-producing {
+  0% {
+    top: 20px;
+  }
+  10% {
+    top: 25px;
+  }
+  20% {
+    top: 20px;
+  }
+  30% {
+    top: 25px;
+  }
+  40% {
+    top: 20px;
+  }
+  50% {
+    top: 25px;
+  }
+  66.6666% {
+    top: 20px;
+    right: 98px;
+    width: 35px;
+    height: 38px;
+    background-image: url(../images/viewpoint_diamond.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    66.6666% {
+      background-image: url(../images/viewpoint_diamond@2x.png);
+      background-size: 35px 38px;
+    }
+  }
+  70% {
+    top: 10px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    70% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+  80% {
+    top: 20px;
+  }
+  90% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    100% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+}
+@-ms-keyframes diamond-producing {
+  0% {
+    top: 20px;
+  }
+  10% {
+    top: 25px;
+  }
+  20% {
+    top: 20px;
+  }
+  30% {
+    top: 25px;
+  }
+  40% {
+    top: 20px;
+  }
+  50% {
+    top: 25px;
+  }
+  66.6666% {
+    top: 20px;
+    right: 98px;
+    width: 35px;
+    height: 38px;
+    background-image: url(../images/viewpoint_diamond.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    66.6666% {
+      background-image: url(../images/viewpoint_diamond@2x.png);
+      background-size: 35px 38px;
+    }
+  }
+  70% {
+    top: 10px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    70% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+  80% {
+    top: 20px;
+  }
+  90% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    100% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+}
+@-webkit-keyframes diamond-producing {
+  0% {
+    top: 20px;
+  }
+  10% {
+    top: 25px;
+  }
+  20% {
+    top: 20px;
+  }
+  30% {
+    top: 25px;
+  }
+  40% {
+    top: 20px;
+  }
+  50% {
+    top: 25px;
+  }
+  66.6666% {
+    top: 20px;
+    right: 98px;
+    width: 35px;
+    height: 38px;
+    background-image: url(../images/viewpoint_diamond.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    66.6666% {
+      background-image: url(../images/viewpoint_diamond@2x.png);
+      background-size: 35px 38px;
+    }
+  }
+  70% {
+    top: 10px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    70% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+  80% {
+    top: 20px;
+  }
+  90% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    100% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+}
+@keyframes diamond-producing {
+  0% {
+    top: 20px;
+  }
+  10% {
+    top: 25px;
+  }
+  20% {
+    top: 20px;
+  }
+  30% {
+    top: 25px;
+  }
+  40% {
+    top: 20px;
+  }
+  50% {
+    top: 25px;
+  }
+  66.6666% {
+    top: 20px;
+    right: 98px;
+    width: 35px;
+    height: 38px;
+    background-image: url(../images/viewpoint_diamond.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    66.6666% {
+      background-image: url(../images/viewpoint_diamond@2x.png);
+      background-size: 35px 38px;
+    }
+  }
+  70% {
+    top: 10px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    70% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
+  }
+  80% {
+    top: 20px;
+  }
+  90% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    background-image: url(../images/viewpoint_diamond_active.png);
+    background-repeat: no-repeat;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    100% {
+      background-image: url(../images/viewpoint_diamond_active@2x.png);
+      background-size: 51px 57px;
+    }
   }
 }

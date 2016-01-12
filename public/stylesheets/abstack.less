@@ -207,7 +207,6 @@ body{
     position: relative;
     width: 340px;
     height: @item-height;
-    .transform-style(preserve-3d);
     &.flipped{
       .back {
         .transform(rotateY(0deg));
@@ -366,41 +365,100 @@ body{
 /*观点样式*/
 .viewpoint-item{
   margin: 30px 50px;
-  height: 300px;
+  .clearfix;
   h2{
-    margin: 0 0 10px;
+    margin: 0 0 35px;
     color: #646464;
-    font-size: 28px;
+    font-size: 36px;
     line-height: 28px;
     font-weight: normal;
   }
   p{
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 30px;
     color: #666666;
   }
-  &.tools{
-    padding-right: 380px;
-    background: url('../images/viewpoint_tools.png') no-repeat right center;
-    background-size: auto 100%;
-    h2{
-      padding-top: 90px;
+  .viewpoint-item-tools{
+    float: right;
+    position: relative;
+    margin-left: 20px;
+    .viewpoint-item-pic{
+      position: relative;
+      z-index: 1;
+      width: 483px;
+      height: 477px;
+      .background-image-2x('../images/viewpoint_tools.png', 483px, 477px);
+    }
+    .fish{
+      position: absolute;
+      top: 60px;
+      right: -60px;
+      width: 109px;
+      height: 117px;
+      .transform-origin(0 0);
+      .animation(fish-shake cubic-bezier(0.645, 0.045, 0.355, 1) infinite alternate 2s);
+      .background-image-2x('../images/viewpoint_fish.png', 109px, 117px);
+    }
+    + h2{
+      padding-top: 150px;
     }
   }
-  &.ue{
-    padding-left: 420px;
-    background: url('../images/viewpoint_ue.png') no-repeat left center;
-    background-size: auto 100%;
-    h2{
+  .viewpoint-item-ue{
+    position: relative;
+    float: left;
+    margin-right: 160px;
+    .viewpoint-item-pic{
+      position: relative;
+      z-index: 1;
+      width: 466px;
+      height: 475px;
+      .background-image-2x('../images/viewpoint_ue.png', 466px, 475px);
+    }
+    .sword{
+      position: absolute;
+      top: 123px;
+      right: -142px;
+      width: 317px;
+      height: 124px;
+      .transform-origin(left bottom);
+      .animation(sword-wave cubic-bezier(0.77, 0, 0.175, 1) infinite alternate 1.6s);
+      .background-image-2x('../images/viewpoint_sword.png', 317px, 124px);
+    }
+    + h2{
       padding-top: 120px;
     }
   }
-  &.delivery{
-    padding-right: 460px;
-    background: url('../images/viewpoint_delivery.png') no-repeat right center;
-    background-size: auto 100%;
-    h2{
-      padding-top: 120px;
+  .viewpoint-item-delivery{
+    position: relative;
+    float: right;
+    margin-left: 20px;
+    .viewpoint-item-pic{
+      position: relative;
+      z-index: 1;
+      width: 570px;
+      height: 382px;
+      .background-image-2x('../images/viewpoint_delivery.png', 570px, 382px);
+    }
+    .material{
+      position: absolute;
+      top: 211px;
+      left: 160px;
+      width: 58px;
+      height: 62px;
+      .animation(material-transport linear 6s infinite);
+      .background-image-2x('../images/viewpoint_material.png', 58px, 62px);
+    }
+    .diamond{
+      position: absolute;
+      top: 20px;
+      right: 98px;
+      width: 35px;
+      height: 38px;
+      .animation(diamond-producing linear 6s infinite);
+      .background-image-2x('../images/viewpoint_diamond.png', 35px, 38px);
+    }
+    + h2{
+      padding-top: 100px;
     }
   }
 }
@@ -437,11 +495,19 @@ body{
 }
 /*变换方式*/
 .transform-style(@value){
-  -webkit-tranform-style: @value;
-  -o-tranform-style: @value;
-  -moz-tranform-style: @value;
-  -ms-tranform-style: @value;
-  tranform-style: @value;
+  -webkit-transform-style: @value;
+  -o-transform-style: @value;
+  -moz-transform-style: @value;
+  -ms-transform-style: @value;
+  transform-style: @value;
+}
+/*变换起点*/
+.transform-origin(@value){
+  -webkit-transform-origin: @value;
+  -o-transform-origin: @value;
+  -moz-transform-origin: @value;
+  -ms-transform-origin: @value;
+  transform-origin: @value;
 }
 /*动画*/
 .animation(@value){
@@ -556,5 +622,82 @@ body{
   }
   100%{
     width: 14px;
+  }
+});
+.keyframes(fish-shake, {
+  0%{
+    .transform(rotate(0deg));
+  }
+  100%{
+    .transform(rotate(20deg));
+  }
+});
+.keyframes(sword-wave, {
+  0%{
+    .transform(rotate(-10deg));
+  }
+  100%{
+    .transform(rotate(0deg));
+  }
+});
+.keyframes(material-transport, {
+  0%{
+    top: 211px;
+    left: 160px;
+  }
+  66.6666%{
+    top: 120px;
+    left: 426px;
+  }
+  100%{
+    top: 120px;
+    left: 426px;
+  }
+});
+.keyframes(diamond-producing, {
+  0%{
+    top: 20px;
+  }
+  10%{
+    top: 25px;
+  }
+  20%{
+    top: 20px;
+  }
+  30%{
+    top: 25px;
+  }
+  40%{
+    top: 20px;
+  }
+  50%{
+    top: 25px;
+  }
+  66.6666%{
+    top: 20px;
+    right: 98px;
+    width: 35px;
+    height: 38px;
+    .background-image-2x('../images/viewpoint_diamond.png', 35px, 38px);
+  }
+  70%{
+    top: 10px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    .background-image-2x('../images/viewpoint_diamond_active.png', 51px, 57px);
+  }
+  80%{
+    top: 20px;
+  }
+  90%{
+    top: 10px;
+  }
+  100%{
+    top: 15px;
+    right: 82px;
+    width: 51px;
+    height: 57px;
+    .background-image-2x('../images/viewpoint_diamond_active.png', 51px, 57px);
   }
 });
