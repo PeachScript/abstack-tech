@@ -6,8 +6,12 @@ html(lang="zh-CN")
     link(rel="stylesheet", href="/stylesheets/abstack.css")
   body
     .container.header
-      a(href="/").logo
-        img(src="images/logo.png", alt="abstack-logo")
+      a(href="/").logo-container#scroll-flip-button
+        .front
+          .logo
+        .back
+          .scroll-top
+
       .navbar-container
         ul.navbar
           li(class=title?undefined: 'active')
@@ -16,6 +20,8 @@ html(lang="zh-CN")
             a(href="/viewpoint") 观点
           li(class=title=='项目'?'active': undefined)
             a(href="/projects") 项目
+          li(class=title=='动态'?'active': undefined)
+            a(href="/news") 动态
           li(class=title=='关于'?'active': undefined)
             a(href="/about") 关于
     block content

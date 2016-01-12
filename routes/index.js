@@ -8,5 +8,6 @@ router.get('/', function(req, res) {
 router.use(require('./viewpoint'));
 router.use(require('./projects'));
 router.use(require('./about'));
+router.use(require('./news'));
 
 module.exports = router;

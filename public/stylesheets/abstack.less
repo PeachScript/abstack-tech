@@ -45,24 +45,50 @@ body{
 /*头部*/
 .header{
   position: relative;
-  z-index: 1;
+  z-index: 2;
   .clearfix;
-  .logo{
-    @size: 100px;
-    float: left;
-    margin-top: @size/3;
-    margin-bottom: -@size/3;
+  .logo-container{
+    @size: 108px;
+    position: fixed;
+    z-index: 10;
+    top: @size/3;
     width: @size;
     height: @size;
-    background-color: #fff;
-    .box-shadow(0 5px 10px rgba(0,0,0,.15));
-    .border-radius(50%);
-    img{    
-      margin-top: 5px;
-      margin-left: -8px;
-      display: block;
-      width: 100%;
-      pointer-events: none;
+    &.flipped{
+      .back {
+        .transform(rotateX(0deg));
+      }
+      .front {
+        .transform(rotateX(180deg));
+      }
+    }
+    .front,
+    .back{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #fff;
+      .box-shadow(0 5px 10px rgba(0,0,0,.15));
+      .border-radius(50%);
+      .backface-visibility(hidden);
+      .transition(ease-in-out .3s);
+    }
+    .front{
+      .logo{    
+        margin-top: 5px;
+        margin-left: -8px;
+        display: block;
+        width: 107px;
+        height: 70px;
+        .background-image-2x('../images/logo.png', 107px, 70px);
+      }
+    }
+    .back{
+      .transform(rotateX(180deg));
+      .background-image-2x('../images/scroll_top_icon.png', 56px, 57px);
+      background-position: center center;
     }
   }
   .navbar-container{

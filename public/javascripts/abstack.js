@@ -36,3 +36,24 @@
     }, 2600);
   }
 })();
+
+/**
+ * 返回顶部按钮与 LOGO 切换
+ */
+;(function () {
+  var scrollBtn = document.getElementById('scroll-flip-button');
+  window.addEventListener('scroll', function () {
+    var scrollTop =  (window.pageYOffset || document.documentElement.scrollTop)  - (document.documentElement.clientTop || 0);
+    if(scrollTop > 1000){
+      if(scrollBtn.className.indexOf('flipped') == -1)
+        scrollBtn.className += ' flipped';
+    }else{
+      scrollBtn.className = scrollBtn.className.replace(' flipped', '');
+    }
+  });
+  scrollBtn.addEventListener('click', function (ev) {
+    ev = ev || event;
+    ev.preventDefault();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  });
+})();
