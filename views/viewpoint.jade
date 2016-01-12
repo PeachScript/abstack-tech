@@ -1,7 +1,8 @@
 extends layout
 
 block content
-  img(src="images/viewpoint_header.png", alt="").viewpoint-header
+  .gradient-header-fix
+    img(src="images/viewpoint_header.png", alt="")
   .container
     .viewpoint-item.tools
       h2 工具
@@ -12,3 +13,7 @@ block content
     .viewpoint-item.delivery
       h2 持续交付
       p 不合理的软件生产过程带来的开销是双向的，并导致软件产品质量低下。我们使用测试驱动的开发方式来保证代码质量，通过完善的部署流水线将产品持续交付到生产环境。
+
+block footer
+  .footer.viewpoint-footer CopyRight &copy; 2016 抽象科技
+    a(href="http://www.miitbeian.gov.cn/") 浙ICP备13028152号-3

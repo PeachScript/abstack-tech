@@ -32,27 +32,21 @@ body{
 .in-making{
   margin: 100px auto;
   height: 407px;
-  background: url('../images/in_making.png') no-repeat center center;
+  .background-image-2x('../images/in_making.png', 480px, 407px);
+  background-position: center center;
 }
 .not-found-elephant{
   margin: 120px auto;
   height: 558px;
-  background: url('../images/404.png') no-repeat center center;
+  .background-image-2x('../images/404.png', 492px, 558px);
+  background-position: center center;
 }
 
 /*头部*/
 .header{
   position: relative;
+  z-index: 1;
   .clearfix;
-  &:before{
-    position: absolute;
-    display: block;
-    top: 100%;
-    right: 0;
-    width: 80%;
-    height: 1px;
-    background-color: #D6D6D6;
-  }
   .logo{
     @size: 100px;
     float: left;
@@ -71,70 +65,88 @@ body{
       pointer-events: none;
     }
   }
-  .navbar{
-    list-style: none;
-    margin: 50px 0 0;
-    padding: 0;
-    float: right;
-    li{
-      @triangle-size: 10px;
-      position: relative;
-      float: left;
-      margin: -1px 25px;
-      font-size: 20px;
-      line-height: 20px;
-      border: 1px solid transparent;
-      &:after, &:before{
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        .transition(border .2s);
-      }
-      &:before{
-        margin-left: -@triangle-size;
-        border: @triangle-size solid transparent;
-        border-top-width: 0;
-        border-top-color: #D6D6D6;
-      }
-      &:after{
-        margin-left: -@triangle-size + 2;
-        border: @triangle-size - 2 solid transparent;
-        border-top-width: 0;
-        border-top-color: #fff;
-      }
-      &:hover{
-        &:before{
-          border-top-width: @triangle-size;
-        }
-        &:after{
-          border-top-width: @triangle-size - 2;
+  .navbar-container{
+    @gap: 200px; // logo 与 导航之间的间隙
+    margin-left: @gap;
+    padding-bottom: 10px;
+    overflow: hidden;
+    .navbar{
+      list-style: none;
+      margin: 45px 0 0;
+      padding: 0;
+      float: right;
+      li{
+        float: left;
+        margin: 0 25px;
+        &:hover{
+          a{
+            color: @c-red;
+          }
         }
         a{
-          color: @c-red;
+          display: block;
+          width: 70px;
+          height: 55px;
+          line-height: 55px;
+          text-align: center;
+          font-size: 20px;
+          color: #44494F;
+          text-decoration: none;
         }
-      }
-      a{
-        display: block;
-        padding: 15px 12px;
-        color: #44494F;
-        text-decoration: none;
-      }
-      &.active{
-        background-color: #fff;
-        border-color: @c-red;
-        &:before{
-          border-top-width: @triangle-size;
-          border-top-color: @c-red;
-        }
-        &:after{
-          border-top-width: @triangle-size - 2;
-        }
-        a{
-          color: @c-red;
+        &.active{
+          position: relative;
+          &:before, &:after{
+            content: '';
+            position: absolute;
+            display: block;
+            margin-top: -1px;
+            top: 100%;
+            width: 800px;
+            height: 1px;
+            background-color: #D6D6D6;
+          }
+          &:before{
+            right: 100%;
+          }
+          &:after{
+            left: 100%;
+          }
+          a{
+            color: @c-red;
+            &:after{
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: -10px;
+              display: block;
+              .background-image-2x('../images/navbar_active.png', 70px, 65px);
+            }
+          }
         }
       }
     }
+  }
+}
+.gradient-header-fix{
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 147px;    
+    background: url('../images/gradient_header_bg.png') repeat-x left top;
+  }
+  *:first-child{
+    margin-top: -110px;
+  }
+  img{
+    margin-bottom: 50px;
+    width: 100%;
+    min-width: @content-width;
+    pointer-events: none;
   }
 }
 /*版权部分*/
@@ -155,6 +167,24 @@ body{
     }
   }
 }
+.project-list-footer{
+  padding: 80px 0 20px;
+  color: #fff;
+  background-color: #2E343A;
+  a{
+    color: #fff;
+  }
+}
+.viewpoint-footer{
+  margin-top: 80px;
+  padding: 150px 0 20px;
+  color: #fff;
+  .background-image-2x('../images/viewpoint_footer_bg.png', 1366px, 63px, repeat-x);
+  background-color: #3C4147;
+  a{
+    color: #fff;
+  }
+}
 
 /*首页*/
 .homepage-container{
@@ -169,42 +199,39 @@ body{
   .soldier{
     width: 160px;
     height: @item-height;
-    background: url('../images/soldier.png') no-repeat center bottom;
+    .background-image-2x('../images/soldier.png', 68px, 104px);
+    background-position: center bottom;
   }
   .abstack-text{
     width: 340px;
     height: @item-height;
-    background: url('../images/abstack_name.png') no-repeat center 50%;
+    .background-image-2x('../images/abstack_name.png', 287px, 354px);
+    background-position: center center;
   }
   .elephant{
     width: 500px;
     height: @item-height;
-    background: url('../images/elephant_machine.png') no-repeat center bottom;
+    .background-image-2x('../images/elephant_machine.png', 492px, 255px);
+    background-position: center bottom;
   }
   .skyline{
     margin-top: -16px;
     margin-bottom: -4px;
     height: 20px;
-    background: url('../images/skyline.png') #fff no-repeat center bottom;
+    .background-image-2x('../images/skyline.png', 1366px, 19px);
+    background-color: #fff;
+    background-position: center bottom;
   }
 }
 
 /*项目页面*/
-.project-list-header{
+.project-list-start{
   margin-top: 60px;
 }
-.project-list-header,.project-list-footer{
+.project-list-start,.project-list-end{
   display: block;
   max-width: 100%;
   pointer-events: none;
-}
-.deep-footer{
-  padding: 80px 0 20px;
-  color: #fff;
-  background-color: #2E343A;
-  a{
-    color: #fff;
-  }
 }
 .project-list{
   list-style: none;
@@ -248,13 +275,6 @@ body{
 }
 
 /*观点样式*/
-.viewpoint-header{
-  margin-top: -100px;
-  margin-bottom: 50px;
-  width: 100%;
-  min-width: @content-width;
-  pointer-events: none;
-}
 .viewpoint-item{
   margin: 30px 50px;
   height: 300px;
@@ -333,4 +353,21 @@ body{
   -moz-box-shadow: @value;
   -ms-box-shadow: @value;
   box-shadow: @value;
+}
+/*retina 图片背景(代码来源：https://gist.github.com/brandonb927/3874012)*/
+.background-image-2x(@image, @width, @height, @repeat: no-repeat) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: ~`"url(@{filename}.@{extension})"`;
+  background-repeat: @repeat;
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      background-image: ~`"url(@{filename}@2x.@{extension})"`;
+      background-size: @width @height;
+  }
 }

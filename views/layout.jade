@@ -8,16 +8,18 @@ html(lang="zh-CN")
     .container.header
       a(href="/").logo
         img(src="images/logo.png", alt="abstack-logo")
-      ul.navbar
-        li(class=title?undefined: 'active')
-          a(href="/") 首页
-        li(class=title=='观点'?'active': undefined)
-          a(href="/viewpoint") 观点
-        li(class=title=='项目'?'active': undefined)
-          a(href="/projects") 项目
-        li(class=title=='关于'?'active': undefined)
-          a(href="/about") 关于
+      .navbar-container
+        ul.navbar
+          li(class=title?undefined: 'active')
+            a(href="/") 首页
+          li(class=title=='观点'?'active': undefined)
+            a(href="/viewpoint") 观点
+          li(class=title=='项目'?'active': undefined)
+            a(href="/projects") 项目
+          li(class=title=='关于'?'active': undefined)
+            a(href="/about") 关于
     block content
     block footer
       .footer CopyRight &copy; 2016 抽象科技
         a(href="http://www.miitbeian.gov.cn/", target="_blank") 浙ICP备13028152号-3
+    script(src="/javascripts/abstack.js")

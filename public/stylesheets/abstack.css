@@ -25,31 +25,39 @@ body {
 .in-making {
   margin: 100px auto;
   height: 407px;
-  background: url('../images/in_making.png') no-repeat center center;
+  background-image: url(../images/in_making.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .in-making {
+    background-image: url(../images/in_making@2x.png);
+    background-size: 480px 407px;
+  }
 }
 .not-found-elephant {
   margin: 120px auto;
   height: 558px;
-  background: url('../images/404.png') no-repeat center center;
+  background-image: url(../images/404.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .not-found-elephant {
+    background-image: url(../images/404@2x.png);
+    background-size: 492px 558px;
+  }
 }
 /*头部*/
 .header {
   position: relative;
+  z-index: 1;
 }
 .header:after,
 .header:before {
   content: '';
   display: table;
   clear: both;
-}
-.header:before {
-  position: absolute;
-  display: block;
-  top: 100%;
-  right: 0;
-  width: 80%;
-  height: 1px;
-  background-color: #D6D6D6;
 }
 .header .logo {
   float: left;
@@ -76,72 +84,91 @@ body {
   width: 100%;
   pointer-events: none;
 }
-.header .navbar {
+.header .navbar-container {
+  margin-left: 200px;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+.header .navbar-container .navbar {
   list-style: none;
-  margin: 50px 0 0;
+  margin: 45px 0 0;
   padding: 0;
   float: right;
 }
-.header .navbar li {
-  position: relative;
+.header .navbar-container .navbar li {
   float: left;
-  margin: -1px 25px;
-  font-size: 20px;
-  line-height: 20px;
-  border: 1px solid transparent;
+  margin: 0 25px;
 }
-.header .navbar li:after,
-.header .navbar li:before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  -webkit-transition: border 0.2s;
-  -o-transition: border 0.2s;
-  -moz-transition: border 0.2s;
-  -ms-transition: border 0.2s;
-  transition: border 0.2s;
-}
-.header .navbar li:before {
-  margin-left: -10px;
-  border: 10px solid transparent;
-  border-top-width: 0;
-  border-top-color: #D6D6D6;
-}
-.header .navbar li:after {
-  margin-left: -8px;
-  border: 8px solid transparent;
-  border-top-width: 0;
-  border-top-color: #fff;
-}
-.header .navbar li:hover:before {
-  border-top-width: 10px;
-}
-.header .navbar li:hover:after {
-  border-top-width: 8px;
-}
-.header .navbar li:hover a {
+.header .navbar-container .navbar li:hover a {
   color: #eb7d7c;
 }
-.header .navbar li a {
+.header .navbar-container .navbar li a {
   display: block;
-  padding: 15px 12px;
+  width: 70px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 20px;
   color: #44494F;
   text-decoration: none;
 }
-.header .navbar li.active {
-  background-color: #fff;
-  border-color: #eb7d7c;
+.header .navbar-container .navbar li.active {
+  position: relative;
 }
-.header .navbar li.active:before {
-  border-top-width: 10px;
-  border-top-color: #eb7d7c;
+.header .navbar-container .navbar li.active:before,
+.header .navbar-container .navbar li.active:after {
+  content: '';
+  position: absolute;
+  display: block;
+  margin-top: -1px;
+  top: 100%;
+  width: 800px;
+  height: 1px;
+  background-color: #D6D6D6;
 }
-.header .navbar li.active:after {
-  border-top-width: 8px;
+.header .navbar-container .navbar li.active:before {
+  right: 100%;
 }
-.header .navbar li.active a {
+.header .navbar-container .navbar li.active:after {
+  left: 100%;
+}
+.header .navbar-container .navbar li.active a {
   color: #eb7d7c;
+}
+.header .navbar-container .navbar li.active a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  display: block;
+  background-image: url(../images/navbar_active.png);
+  background-repeat: no-repeat;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .header .navbar-container .navbar li.active a:after {
+    background-image: url(../images/navbar_active@2x.png);
+    background-size: 70px 65px;
+  }
+}
+.gradient-header-fix:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 147px;
+  background: url('../images/gradient_header_bg.png') repeat-x left top;
+}
+.gradient-header-fix *:first-child {
+  margin-top: -110px;
+}
+.gradient-header-fix img {
+  margin-bottom: 50px;
+  width: 100%;
+  min-width: 1000px;
+  pointer-events: none;
 }
 /*版权部分*/
 .footer {
@@ -160,6 +187,31 @@ body {
 .footer a:hover {
   color: #e45755;
   text-decoration: underline;
+}
+.project-list-footer {
+  padding: 80px 0 20px;
+  color: #fff;
+  background-color: #2E343A;
+}
+.project-list-footer a {
+  color: #fff;
+}
+.viewpoint-footer {
+  margin-top: 80px;
+  padding: 150px 0 20px;
+  color: #fff;
+  background-image: url(../images/viewpoint_footer_bg.png);
+  background-repeat: repeat-x;
+  background-color: #3C4147;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .viewpoint-footer {
+    background-image: url(../images/viewpoint_footer_bg@2x.png);
+    background-size: 1366px 63px;
+  }
+}
+.viewpoint-footer a {
+  color: #fff;
 }
 /*首页*/
 .homepage-container {
@@ -181,41 +233,66 @@ body {
 .homepage-container .soldier {
   width: 160px;
   height: 600px;
-  background: url('../images/soldier.png') no-repeat center bottom;
+  background-image: url(../images/soldier.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .homepage-container .soldier {
+    background-image: url(../images/soldier@2x.png);
+    background-size: 68px 104px;
+  }
 }
 .homepage-container .abstack-text {
   width: 340px;
   height: 600px;
-  background: url('../images/abstack_name.png') no-repeat center 50%;
+  background-image: url(../images/abstack_name.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .homepage-container .abstack-text {
+    background-image: url(../images/abstack_name@2x.png);
+    background-size: 287px 354px;
+  }
 }
 .homepage-container .elephant {
   width: 500px;
   height: 600px;
-  background: url('../images/elephant_machine.png') no-repeat center bottom;
+  background-image: url(../images/elephant_machine.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .homepage-container .elephant {
+    background-image: url(../images/elephant_machine@2x.png);
+    background-size: 492px 255px;
+  }
 }
 .homepage-container .skyline {
   margin-top: -16px;
   margin-bottom: -4px;
   height: 20px;
-  background: url('../images/skyline.png') #ffffff no-repeat center bottom;
+  background-image: url(../images/skyline.png);
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-position: center bottom;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .homepage-container .skyline {
+    background-image: url(../images/skyline@2x.png);
+    background-size: 1366px 19px;
+  }
 }
 /*项目页面*/
-.project-list-header {
+.project-list-start {
   margin-top: 60px;
 }
-.project-list-header,
-.project-list-footer {
+.project-list-start,
+.project-list-end {
   display: block;
   max-width: 100%;
   pointer-events: none;
-}
-.deep-footer {
-  padding: 80px 0 20px;
-  color: #fff;
-  background-color: #2E343A;
-}
-.deep-footer a {
-  color: #fff;
 }
 .project-list {
   list-style: none;
@@ -265,13 +342,6 @@ body {
   color: #e45755;
 }
 /*观点样式*/
-.viewpoint-header {
-  margin-top: -100px;
-  margin-bottom: 50px;
-  width: 100%;
-  min-width: 1000px;
-  pointer-events: none;
-}
 .viewpoint-item {
   margin: 30px 50px;
   height: 300px;
@@ -318,3 +388,4 @@ body {
 /*过渡*/
 /*变换*/
 /*盒子阴影*/
+/*retina 图片背景(代码来源：https://gist.github.com/brandonb927/3874012)*/
