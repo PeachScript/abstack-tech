@@ -29,7 +29,10 @@
  * 首页 slogan 翻转动画
  */
 ;(function () {
-  setTimeout(function () {
-    document.getElementById('animate-abstack-text').className += ' flipped';
-  }, 2000);
+  var text = document.getElementById('animate-abstack-text');
+  if(text){
+    setTimeout(function () {
+      document.getElementById('animate-abstack-text').className += ' flipped';
+    }, 2600);
+  }
 })();

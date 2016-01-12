@@ -267,6 +267,20 @@ body {
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+.homepage-container .abstack-text:hover .back {
+  -webkit-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.homepage-container .abstack-text:hover .front {
+  -webkit-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
 .homepage-container .abstack-text .front,
 .homepage-container .abstack-text .back {
   position: absolute;
@@ -310,66 +324,66 @@ body {
   left: 90px;
   width: 37px;
   height: 5px;
-  -webkit-animation: 0.3s linear name-line-1;
-  -o-animation: 0.3s linear name-line-1;
-  -moz-animation: 0.3s linear name-line-1;
-  -ms-animation: 0.3s linear name-line-1;
-  animation: 0.3s linear name-line-1;
+  -webkit-animation: 0.2s ease-out name-line-1;
+  -o-animation: 0.2s ease-out name-line-1;
+  -moz-animation: 0.2s ease-out name-line-1;
+  -ms-animation: 0.2s ease-out name-line-1;
+  animation: 0.2s ease-out name-line-1;
 }
 .homepage-container .abstack-text .front .front-line-2 {
   top: 69px;
   left: 122px;
   width: 5px;
   height: 49px;
-  -webkit-animation: 0.6s linear name-line-2;
-  -o-animation: 0.6s linear name-line-2;
-  -moz-animation: 0.6s linear name-line-2;
-  -ms-animation: 0.6s linear name-line-2;
-  animation: 0.6s linear name-line-2;
+  -webkit-animation: 0.4s ease-out name-line-2;
+  -o-animation: 0.4s ease-out name-line-2;
+  -moz-animation: 0.4s ease-out name-line-2;
+  -ms-animation: 0.4s ease-out name-line-2;
+  animation: 0.4s ease-out name-line-2;
 }
 .homepage-container .abstack-text .front .front-line-3 {
   top: 113px;
   right: 165px;
   width: 17px;
   height: 5px;
-  -webkit-animation: 0.9s linear name-line-3;
-  -o-animation: 0.9s linear name-line-3;
-  -moz-animation: 0.9s linear name-line-3;
-  -ms-animation: 0.9s linear name-line-3;
-  animation: 0.9s linear name-line-3;
+  -webkit-animation: 0.5s ease-out name-line-3;
+  -o-animation: 0.5s ease-out name-line-3;
+  -moz-animation: 0.5s ease-out name-line-3;
+  -ms-animation: 0.5s ease-out name-line-3;
+  animation: 0.5s ease-out name-line-3;
 }
 .homepage-container .abstack-text .front .front-line-4 {
   top: 118px;
   left: 105px;
   width: 5px;
   height: 120px;
-  -webkit-animation: 1.2s linear name-line-4;
-  -o-animation: 1.2s linear name-line-4;
-  -moz-animation: 1.2s linear name-line-4;
-  -ms-animation: 1.2s linear name-line-4;
-  animation: 1.2s linear name-line-4;
+  -webkit-animation: 1.2s ease-out name-line-4;
+  -o-animation: 1.2s ease-out name-line-4;
+  -moz-animation: 1.2s ease-out name-line-4;
+  -ms-animation: 1.2s ease-out name-line-4;
+  animation: 1.2s ease-out name-line-4;
 }
 .homepage-container .abstack-text .front .front-line-5 {
   top: 233px;
   left: 110px;
   width: 51px;
   height: 5px;
-  -webkit-animation: 1.5s linear name-line-5;
-  -o-animation: 1.5s linear name-line-5;
-  -moz-animation: 1.5s linear name-line-5;
-  -ms-animation: 1.5s linear name-line-5;
-  animation: 1.5s linear name-line-5;
+  -webkit-animation: 1.8s ease-out name-line-5;
+  -o-animation: 1.8s ease-out name-line-5;
+  -moz-animation: 1.8s ease-out name-line-5;
+  -ms-animation: 1.8s ease-out name-line-5;
+  animation: 1.8s ease-out name-line-5;
 }
 .homepage-container .abstack-text .front .front-line-6 {
   top: 109px;
   left: 259px;
   width: 14px;
   height: 8px;
-  -webkit-animation: 1.8s linear name-line-6;
-  -o-animation: 1.8s linear name-line-6;
-  -moz-animation: 1.8s linear name-line-6;
-  -ms-animation: 1.8s linear name-line-6;
-  animation: 1.8s linear name-line-6;
+  -webkit-animation: 2.4s ease-out name-line-6;
+  -o-animation: 2.4s ease-out name-line-6;
+  -moz-animation: 2.4s ease-out name-line-6;
+  -ms-animation: 2.4s ease-out name-line-6;
+  animation: 2.4s ease-out name-line-6;
 }
 .homepage-container .abstack-text .back {
   margin-left: -133px;
@@ -626,7 +640,7 @@ body {
   0% {
     width: 0;
   }
-  66.66666% {
+  80% {
     width: 0;
   }
   100% {
@@ -637,7 +651,7 @@ body {
   0% {
     width: 0;
   }
-  66.66666% {
+  80% {
     width: 0;
   }
   100% {
@@ -648,7 +662,7 @@ body {
   0% {
     width: 0;
   }
-  66.66666% {
+  80% {
     width: 0;
   }
   100% {
@@ -659,7 +673,7 @@ body {
   0% {
     width: 0;
   }
-  66.66666% {
+  80% {
     width: 0;
   }
   100% {
@@ -670,7 +684,7 @@ body {
   0% {
     width: 0;
   }
-  66.66666% {
+  80% {
     width: 0;
   }
   100% {
@@ -681,7 +695,7 @@ body {
   0% {
     height: 0;
   }
-  75% {
+  41.6666667% {
     height: 0;
   }
   100% {
@@ -692,7 +706,7 @@ body {
   0% {
     height: 0;
   }
-  75% {
+  41.6666667% {
     height: 0;
   }
   100% {
@@ -703,7 +717,7 @@ body {
   0% {
     height: 0;
   }
-  75% {
+  41.6666667% {
     height: 0;
   }
   100% {
@@ -714,7 +728,7 @@ body {
   0% {
     height: 0;
   }
-  75% {
+  41.6666667% {
     height: 0;
   }
   100% {
@@ -725,7 +739,7 @@ body {
   0% {
     height: 0;
   }
-  75% {
+  41.6666667% {
     height: 0;
   }
   100% {
@@ -736,7 +750,7 @@ body {
   0% {
     width: 0;
   }
-  80% {
+  66.6666667% {
     width: 0;
   }
   100% {
@@ -747,7 +761,7 @@ body {
   0% {
     width: 0;
   }
-  80% {
+  66.6666667% {
     width: 0;
   }
   100% {
@@ -758,7 +772,7 @@ body {
   0% {
     width: 0;
   }
-  80% {
+  66.6666667% {
     width: 0;
   }
   100% {
@@ -769,7 +783,7 @@ body {
   0% {
     width: 0;
   }
-  80% {
+  66.6666667% {
     width: 0;
   }
   100% {
@@ -780,7 +794,7 @@ body {
   0% {
     width: 0;
   }
-  80% {
+  66.6666667% {
     width: 0;
   }
   100% {
@@ -791,7 +805,7 @@ body {
   0% {
     width: 0;
   }
-  83.3333% {
+  75% {
     width: 0;
   }
   100% {
@@ -802,7 +816,7 @@ body {
   0% {
     width: 0;
   }
-  83.3333% {
+  75% {
     width: 0;
   }
   100% {
@@ -813,7 +827,7 @@ body {
   0% {
     width: 0;
   }
-  83.3333% {
+  75% {
     width: 0;
   }
   100% {
@@ -824,7 +838,7 @@ body {
   0% {
     width: 0;
   }
-  83.3333% {
+  75% {
     width: 0;
   }
   100% {
@@ -835,7 +849,7 @@ body {
   0% {
     width: 0;
   }
-  83.3333% {
+  75% {
     width: 0;
   }
   100% {
