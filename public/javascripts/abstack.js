@@ -24,3 +24,12 @@
     retianImg.src = src;
   }
 })();
+
+/**
+ * 首页 slogan 翻转动画
+ */
+;(function () {
+  setTimeout(function () {
+    document.getElementById('animate-abstack-text').className += ' flipped';
+  }, 2000);
+})();

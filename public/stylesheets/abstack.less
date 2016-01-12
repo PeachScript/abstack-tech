@@ -203,10 +203,91 @@ body{
     background-position: center bottom;
   }
   .abstack-text{
+    @color: #2E343B;
+    position: relative;
     width: 340px;
     height: @item-height;
-    .background-image-2x('../images/abstack_name.png', 287px, 354px);
-    background-position: center center;
+    .transform-style(preserve-3d);
+    &.flipped{
+      .back {
+        .transform(rotateY(0deg));
+      }
+      .front {
+        .transform(rotateY(180deg));
+      }
+    }
+    .front,
+    .back{
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      .backface-visibility(hidden);
+      .transition(cubic-bezier(0.175, 0.885, 0.32, 1.275) .7s);
+    }
+    .front{
+      margin-left: -143px;
+      width: 287px;
+      height: 354px;
+      .background-image-2x('../images/abstack_name.png', 287px, 354px);
+      .front-line-1,
+      .front-line-2,
+      .front-line-3,
+      .front-line-4,
+      .front-line-5,
+      .front-line-6{
+        position: absolute;
+        background-color: @color;
+      }
+      .front-line-1{
+        top: 64px;
+        left: 90px;
+        width: 37px;
+        height: 5px;
+        .animation(.3s linear name-line-1);
+      }
+      .front-line-2{
+        top: 69px;
+        left: 122px;
+        width: 5px;
+        height: 49px;
+        .animation(.6s linear name-line-2);
+      }
+      .front-line-3{
+        top: 113px;
+        right: 165px;
+        width: 17px;
+        height: 5px;
+        .animation(.9s linear name-line-3);
+      }
+      .front-line-4{
+        top: 118px;
+        left: 105px;
+        width: 5px;
+        height: 120px;
+        .animation(1.2s linear name-line-4);
+      }
+      .front-line-5{
+        top: 233px;
+        left: 110px;
+        width: 51px;
+        height: 5px;
+        .animation(1.5s linear name-line-5);
+      }
+      .front-line-6{
+        top: 109px;
+        left: 259px;
+        width: 14px;
+        height: 8px;
+        .animation(1.8s linear name-line-6);
+      }
+    }
+    .back{
+      margin-left: -133px;
+      width: 265px;
+      height: 355px;
+      .transform(rotateY(180deg));
+      .background-image-2x('../images/slogan.png', 265px, 355px);
+    }
   }
   .elephant{
     width: 500px;
@@ -346,6 +427,30 @@ body{
   -ms-transform: @value;
   transform: @value;
 }
+/*变换方式*/
+.transform-style(@value){
+  -webkit-tranform-style: @value;
+  -o-tranform-style: @value;
+  -moz-tranform-style: @value;
+  -ms-tranform-style: @value;
+  tranform-style: @value;
+}
+/*动画*/
+.animation(@value){
+  -webkit-animation: @value;
+  -o-animation: @value;
+  -moz-animation: @value;
+  -ms-animation: @value;
+  animation: @value;
+}
+/*背面显示属性*/
+.backface-visibility(@value){
+  -webkit-backface-visibility: @value;
+  -o-backface-visibility: @value;
+  -moz-backface-visibility: @value;
+  -ms-backface-visibility: @value;
+  backface-visibility: @value;
+}
 /*盒子阴影*/
 .box-shadow(@value){
   -webkit-box-shadow: @value;
@@ -371,3 +476,77 @@ body{
       background-size: @width @height;
   }
 }
+/*keyframe mixin(代码来源：http://codepen.io/zvuc/pen/xvoys)*/
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name { @arguments(); }
+  @-o-keyframes @name { @arguments(); }
+  @-ms-keyframes @name { @arguments(); }
+  @-webkit-keyframes @name { @arguments(); }
+  @keyframes @name { @arguments(); }
+}
+
+/*keyframes*/
+// 首页名称笔画动画
+.keyframes(name-line-1, {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 37px;
+  }
+});
+.keyframes(name-line-2, {
+  0%{
+    height: 0;
+  }
+  50%{
+    height: 0;
+  }
+  100%{
+    height: 49px;
+  }
+});
+.keyframes(name-line-3, {
+  0%{
+    width: 0;
+  }
+  66.66666%{
+    width: 0;
+  }
+  100%{
+    width: 17px;
+  }
+});
+.keyframes(name-line-4, {
+  0%{
+    height: 0;
+  }
+  75%{
+    height: 0;
+  }
+  100%{
+    height: 120px;
+  }
+});
+.keyframes(name-line-5, {
+  0%{
+    width: 0;
+  }
+  80%{
+    width: 0;
+  }
+  100%{
+    width: 51px;
+  }
+});
+.keyframes(name-line-6, {
+  0%{
+    width: 0;
+  }
+  83.3333%{
+    width: 0;
+  }
+  100%{
+    width: 14px;
+  }
+});
