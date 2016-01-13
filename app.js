@@ -8,10 +8,9 @@ var express = require('express'),
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
+app.use(logger('combined'));
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
+app.use(routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -27,8 +26,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(4002, function () {
-  var addr = this.address().address,
-      port = this.address().port;
-  console.log('Server running at http://%s:%s/', addr == '::'?'127.0.0.1': addr, port);
-});
+module.exports = app;
