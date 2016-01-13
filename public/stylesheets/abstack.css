@@ -1064,13 +1064,13 @@ body {
 }
 #about-scroll-container .about-scroll-contact .container {
   height: 100%;
-  background-image: url(../images/about_contact_map.png);
+  background-image: url(../images/about_contact_map.jpg);
   background-repeat: no-repeat;
   background-position: left center;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #about-scroll-container .about-scroll-contact .container {
-    background-image: url(../images/about_contact_map@2x.png);
+    background-image: url(../images/about_contact_map@2x.jpg);
     background-size: 460px 485px;
   }
 }
