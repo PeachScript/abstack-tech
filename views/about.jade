@@ -1,4 +1,93 @@
 extends layout
 
 block content
-  .in-making
+  #about-scroll-container.gradient-header-fix
+    section.about-scroll-overview
+      .about-overview-container
+        .container
+          h2 关于抽象科技
+          p 抽象科技（Abstack）致力于解决软件工程的复杂性问题。我们通过创造性的方案提升工程师的生产力，同时把这个过程实现注入到软件产品的设计里，帮助用户同样实现高效率的成果输出。我们怀着学习、分享、求精的心态参与到软件开发这项大事业中，希望能与同行携手进步，为社会、行业创造有价值的解决方案。
+    section.about-scroll-team
+      .container
+        h2 我们的团队
+        .team-item.member-1
+          .team-item-intro
+            h3 小黄
+            p 一句话介绍
+        .team-item.member-2
+          .team-item-intro
+            h3 晶晶
+            p 一句话介绍
+        .team-item.member-3
+          .team-item-intro
+            h3 桃子
+            p 一句话介绍
+        .team-item.member-4
+          .team-item-intro
+            h3 夏栋
+            p 一句话介绍
+        .team-item.member-5
+          .team-item-intro
+            h3 亚鸿
+            p 一句话介绍
+        .team-item.member-6
+          .team-item-intro
+            h3 乐乐
+            p 一句话介绍
+        .team-item.member-7
+          .team-item-intro
+            h3 阿路
+            p 一句话介绍
+        .team-item.member-8
+          .team-item-intro
+            h3 创易
+            p 一句话介绍
+        .team-item.member-9
+          .team-item-intro
+            h3 成希
+            p 一句话介绍
+        .team-item.member-10
+          .team-item-intro
+            h3 小杰
+            p 一句话介绍
+        .team-item.member-11
+          .team-item-intro
+            h3 毛毛
+            p 一句话介绍
+        .team-item.member-12
+          .team-item-intro
+            h3 小威
+            p 一句话介绍
+    section.about-scroll-routes
+      .container
+        h2 我们的历程
+        .timeline
+        .timeline-item.left
+          h3 2013
+          p 2013 年 3 月，“抽象科技”团队成立，Onlu three idiots
+        .timeline-item.right
+          h3 2013 - 2014
+          p 2013 至 2014 年全年，为 Deadline 而战，同时思考软件和人生
+        .timeline-item.big-dot.left
+          h3 2015
+          p 2015 年 7 月，得到天使轮风投
+        .timeline-item.right
+          h3 2015
+          p 2015 年 10 月，明悟，确定目标，确定事业，以新姿态展现在大家面前
+    section.about-scroll-contact
+      .container
+        .contact-info
+          h2 联系我们
+          p 坐标一江之流，心系四海之界
+          ul
+            li.tel 0571-86131487
+            li.email
+              a(href="mailto:temp@abstack.com") temp@abstack.com
+            li.blog
+              a(href="http://blog.abstack.com/", target="_blank") blog.abstack.com
+            li.addr 浙江省杭州市西湖区文三西路 111 号
+      .footer.about-footer CopyRight &copy; 2016 抽象科技
+        a(href="http://www.miitbeian.gov.cn/") 浙ICP备13028152号-3
+  block footer
+  link(rel="stylesheet", href="/libs/onepagescroll/onepagescroll.css")
+  script(src="/libs/onepagescroll/onepagescroll.js")

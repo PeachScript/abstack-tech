@@ -47,6 +47,11 @@ body{
   position: relative;
   z-index: 2;
   .clearfix;
+  .transition(~'visibility .3s, opacity .3s');
+  &.hide{
+    visibility: hidden;
+    .opacity(0);
+  }
   .logo-container{
     @size: 108px;
     position: fixed;
@@ -165,7 +170,7 @@ body{
     height: 147px;    
     background: url('../images/gradient_header_bg.png') repeat-x left top;
   }
-  *:first-child{
+  > *:first-child{
     margin-top: -110px;
   }
   img{
@@ -209,6 +214,18 @@ body{
   background-color: #3C4147;
   a{
     color: #fff;
+  }
+}
+.about-footer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 0;
+  color: #A3A3A4;
+  background-color: #D5D6D8;
+  a{
+    color: #A3A3A4;
   }
 }
 
@@ -485,6 +502,349 @@ body{
     }
     + h2{
       padding-top: 100px;
+    }
+  }
+}
+
+/*关于我们*/
+#about-scroll-container{
+  h2{
+    font-size: 36px;
+    line-height: 36px;
+  }
+  > section{
+    .clearfix;
+  }
+  // 概览页
+  .about-scroll-overview{
+    background: url('../images/about_header_bg.jpg') center top no-repeat;
+    background-size: auto 100%;
+    .about-overview-container{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin-top: -50px;
+      padding: 20px 0;
+      background-color: rgba(255,255,255,.8);
+      .opacity(0);
+      .transition(~'opacity .6s .3s, margin-top .6s .3s');
+      h2{
+        margin: 0 80px 0 20px;
+        float: left;
+        height: 80px;
+        color: @c-basic;
+      }
+      p{
+        font-size: 16px;
+        color: #666;
+        line-height: 22px;
+      }
+      h2,p{
+        position: relative;
+        top: 10px;
+        .opacity(0);
+        .transition(~'opacity .5s .8s, top .5s .8s');
+      }
+    }
+    &.ops-section.active{
+      .about-overview-container{
+        margin-top: -60px;
+        .opacity(100);
+        h2,p{
+          top: 0px;
+          .opacity(100);
+        }
+      }
+    }
+  }
+  // 团队页
+  .about-scroll-team{
+    h2{
+      color: #666666;
+    }
+    .team-item{
+      position: relative;
+      top: 60px;
+      float: left;
+      cursor: pointer;
+      .transition(background .3s);
+      .background-image-2x('../images/about_team.png', 1642px, 374px);
+      &:hover{
+        z-index: 1;
+        .background-image-2x('../images/about_team_active.png', 1642px, 374px);
+        .team-item-intro{
+          bottom: 103%;
+          .opacity(100);
+          visibility: visible;
+        }
+      }
+      &.member-1{
+        margin-top: 100px;
+        width: 100px;
+        height: 369px;
+        background-position: 0 -5px;
+      }
+      &.member-2{
+        margin-top: 105px;
+        margin-left: -15px;
+        width: 95px;
+        height: 309px;
+        background-position: -129px -65px;
+      }
+      &.member-3{
+        margin-top: 140px;
+        margin-left: -20px;
+        width: 103px;
+        height: 332px;
+        background-position: -253px -42px;
+      }
+      &.member-4{
+        margin-top: 110px;
+        margin-left: -12px;
+        width: 130px;
+        height: 337px;
+        background-position: -385px -37px;
+      }
+      &.member-5{
+        margin-top: 35px;
+        margin-left: -35px;
+        width: 98px;
+        height: 313px;
+        background-position: -544px -61px;
+      }
+      &.member-6{
+        margin-top: 115px;
+        margin-left: -33px;
+        width: 111px;
+        height: 359px;
+        background-position: -671px -15px;
+      }
+      &.member-7{
+        margin-top: 125px;
+        margin-left: -15px;
+        width: 109px;
+        height: 357px;
+        background-position: -811px -17px;
+      }
+      &.member-8{
+        margin-top: 12px;
+        margin-left: -52px;
+        width: 102px;
+        height: 358px;
+        background-position: -949px -16px;
+      }
+      &.member-9{
+        margin-top: 130px;
+        margin-left: -38px;
+        width: 100px;
+        height: 371px;
+        background-position: -1080px -3px;
+      }
+      &.member-10{
+        margin-top: 70px;
+        margin-left: -29px;
+        width: 118px;
+        height: 374px;
+        background-position: -1209px 0;
+      }
+      &.member-11{
+        margin-top: 0px;
+        margin-left: -46px;
+        width: 125px;
+        height: 349px;
+        background-position: -1356px -25px;
+      }
+      &.member-12{
+        margin-top: 100px;
+        margin-left: -29px;
+        width: 132px;
+        height: 361px;
+        background-position: -1510px -13px;
+      }
+      .team-item-intro{
+        @triangle-size: 10px;
+        position: absolute;
+        left: 0;
+        bottom: 100%;
+        width: 140px;
+        padding: 10px;
+        color: @c-red;
+        background-color: #fff;
+        border: 2px solid @c-basic;
+        visibility: hidden;
+        .border-radius(10px);
+        .opacity(0);
+        .transition(~'visibility .3s, bottom .3s');
+        &:before,
+        &:after{
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 40px;
+          display: block;
+          width: 0;
+          height: 0;
+        }
+        &:before{
+          border: @triangle-size solid transparent;
+          border-top-color: @c-basic;
+        }
+        &:after{
+          margin-left: 4px;
+          border: (@triangle-size - 4) solid transparent;
+          border-top-color: #fff;
+        }
+        h3{
+          margin: 0 0 5px;
+          font-size: 16px;
+          line-height: 16px;
+        }
+        p{
+          margin: 0;
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+  // 历程页
+  .about-scroll-routes{
+    background: url('../images/about_routes_end.png') #2E343B repeat-x center bottom;
+    h2{
+      color: #fff;
+    }
+    .timeline{
+      @line-width: 4px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      margin-left: -@line-width/2;
+      width: @line-width;
+      height: 100%;
+      background-color: #fff;
+    }
+    .timeline-item{
+      @dot-size: 20px;
+      @dot-border-size: 4px;
+      position: relative;
+      color: #fff;
+      margin-top: 40px;
+      text-align: center;
+      h3{
+        margin: 0 0 10px;
+        font-size: 40px;
+        line-height: 40px;
+      }
+      p{
+        margin: 0;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ddd;
+      }
+      &.left, &.right{
+        &:after{
+          content: '';
+          position: absolute;
+          top: 5px;
+          display: block;
+          width: @dot-size;
+          height: @dot-size;
+          background-color: #2E343B;
+          border: @dot-border-size solid #fff;
+          .border-radius(50%);
+        }
+      }
+      &.left{
+        margin-right: 50%;
+        padding-right: 60px;
+        text-align: right;
+        &:after{
+          right: -@dot-size/2 - @dot-border-size;
+        }
+      }
+      &.right{
+        margin-left: 50%;
+        padding-left: 60px;
+        text-align: left;
+        &:after{
+          left: -@dot-size/2 - @dot-border-size;
+        }
+      }
+      &.big-dot{
+        @gap: 80px;
+        margin-top: @gap;
+        margin-bottom: @gap;
+        @size: @dot-size + 18;
+        &:after{
+          top: -4px;
+          width: @size;
+          height: @size;
+          border-width: @dot-border-size;
+        }
+        &.left:after{
+          right: -@size/2 - @dot-border-size;
+        }
+        &.right:after{
+          left: -@size/2 - @dot-border-size;
+        }
+      }
+    }
+  }
+  // 联系页
+  .about-scroll-contact{
+    position: relative;
+    .container{
+      height: 100%;
+      .background-image-2x('../images/about_contact_map.png', 460px, 485px);
+      background-position: left center;
+      .contact-info{
+        padding: 30% 0 0 50px;
+        margin-left: 50%;
+        h2{
+          margin: 0 0 15px;
+          color: #666;
+        }
+        p{
+          margin: 0;
+          font-size: 16px;
+          line-height: 20px;
+          color: #999;
+        }
+        ul{
+          margin: 20px 0 0;
+          padding-left: 0;
+          list-style: none;
+          li{
+            padding-left: 60px;
+            height: 50px;
+            line-height: 50px;
+            color: #666;
+            background-position: 5px center;
+            a{
+              color: #666;
+              text-decoration: none;
+              &:hover{
+                color: @c-basic;
+                text-decoration: underline;
+              }
+            }
+            &.tel{
+              .background-image-2x('../images/icon_contact_tel.png', 25px, 25px);
+            }
+            &.email{
+              .background-image-2x('../images/icon_contact_email.png', 25px, 19px);
+            }
+            &.blog{
+              .background-image-2x('../images/icon_contact_blog.png', 25px, 25px);
+            }
+            &.addr{
+              .background-image-2x('../images/icon_contact_addr.png', 25px, 33px);
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -58,3 +58,24 @@
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   });
 })();
+
+/**
+ * 关于页面的滚动部分
+ */
+;(function () {
+  var header = document.getElementsByClassName('header')[0];
+  if(document.getElementById('about-scroll-container')){
+    onePageScroll('#about-scroll-container', {
+      beforeMove: function (index) {
+        if(index > 1 && header.className.indexOf('hide') == -1)
+          header.className += ' hide';
+      },
+      afterMove: function (index) {
+        if(index == 1 && header.className.indexOf(' hide') > -1)
+          header.className = header.className.replace(' hide', '');
+        else if(header.className.indexOf('hide') == -1)
+          header.className += ' hide';
+      }
+    });
+  }
+})();
