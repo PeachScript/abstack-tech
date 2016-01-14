@@ -1,15 +1,15 @@
 doctype html
 html(lang="zh-CN")
   head
-    link(rel="stylesheet", href="/stylesheets/abstack.css")
     meta(charset="utf-8")
     meta(name="description", content="抽象科技（Abstack）致力于解决软件工程的复杂性问题。我们通过创造性的方案提升工程师的生产力，同时把这个过程实现注入到软件产品的设计里，帮助用户同样实现高效率的成果输出。我们怀着学习、分享、求精的心态参与到软件开发这项大事业中，希望能与同行携手进步，为社会、行业创造有价值的解决方案。")
     meta(name="keywords", content="抽象科技,软件开发,互联网,技术合伙人,创业,软件工程,解决方案")
     meta(http-equiv="X-UA-Compatible", content="IE=EDGE")
     meta(name="renderer", content="webkit")
     title #{title?title + ' - ': ''}抽象科技
+    link(rel="stylesheet", href="/stylesheets/abstack#{isDev()?'': '.min'}.css")
   body
-    .container.header
+    .header
       a(href="/").logo-container
         .front
           .logo
@@ -31,4 +31,4 @@ html(lang="zh-CN")
     block footer
       .footer CopyRight &copy; 2016 抽象科技
         a(href="http://www.miitbeian.gov.cn/", target="_blank") 浙ICP备13028152号-3
-    script(src="/javascripts/abstack.js")
+    script(src="/javascripts/abstack#{isDev()?'': '.min'}.js")

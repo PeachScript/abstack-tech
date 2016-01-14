@@ -45,6 +45,7 @@ body{
 /*头部*/
 .header{
   position: relative;
+  margin: 0 50px;
   z-index: 2;
   .clearfix;
   .transition(~'visibility .3s, opacity .3s');
@@ -81,7 +82,7 @@ body{
       .transition(ease-in-out .3s);
     }
     .front{
-      .logo{    
+      .logo{
         margin-top: 5px;
         margin-left: -8px;
         display: block;
@@ -132,7 +133,7 @@ body{
             display: block;
             margin-top: -1px;
             top: 100%;
-            width: 800px;
+            width: 1600px;
             height: 1px;
             background-color: #D6D6D6;
           }
@@ -167,7 +168,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    height: 147px;    
+    height: 147px;
     background: url('../images/gradient_header_bg.png') repeat-x left top;
   }
   > *:first-child{
@@ -667,7 +668,7 @@ body{
         position: absolute;
         left: 0;
         bottom: 100%;
-        width: 140px;
+        width: 170px;
         padding: 10px;
         color: @c-red;
         background-color: #fff;
@@ -704,6 +705,12 @@ body{
           margin: 0;
           font-size: 14px;
           line-height: 18px;
+        }
+        a{
+          color: @c-red;
+          &:hover{
+            color: @c-basic;
+          }
         }
       }
     }

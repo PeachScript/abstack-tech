@@ -8,6 +8,16 @@ var express = require('express'),
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+if(app.get('env') == 'development'){
+  app.use(require('connect-livereload')({
+    port: 35742
+  }));
+}
+
+app.locals.isDev = function () {
+  return app.get('env') == 'development';
+}
+
 app.use(logger('combined'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
