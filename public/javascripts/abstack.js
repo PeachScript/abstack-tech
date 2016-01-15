@@ -138,15 +138,17 @@
 
   if(firstVideo){
     firstVideo.addEventListener('progress', function () {
-      if(this.readyState){
-        var percent = parseInt(this.buffered.end(0) / this.duration * 100);
+      var end = 0;
+      try{
+        end = this.buffered.end(0);
+      }catch(e){}
+      var percent = parseInt(end / this.duration * 100);
 
-        container.setAttribute('percent', percent);
+      container.setAttribute('percent', percent);
 
-        if(percent == 100){
-          container.className = container.className.replace('loading', '');
-          firstVideo.play();
-        }
+      if(percent == 100){
+        container.className = container.className.replace('loading', '');
+        firstVideo.play();
       }
     });
   }
