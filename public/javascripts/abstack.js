@@ -136,16 +136,18 @@
   var firstVideo = videos[0],
       container = document.getElementById('about-scroll-container');
 
-  firstVideo.addEventListener('progress', function () {
-    if(this.readyState){
-      var percent = parseInt(this.buffered.end(0) / this.duration * 100);
+  if(firstVideo){
+    firstVideo.addEventListener('progress', function () {
+      if(this.readyState){
+        var percent = parseInt(this.buffered.end(0) / this.duration * 100);
 
-      container.setAttribute('percent', percent);
+        container.setAttribute('percent', percent);
 
-      if(percent == 100){
-        container.className = container.className.replace('loading', '');
-        firstVideo.play();
+        if(percent == 100){
+          container.className = container.className.replace('loading', '');
+          firstVideo.play();
+        }
       }
-    }
-  });
+    });
+  }
 })();
