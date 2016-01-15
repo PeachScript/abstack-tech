@@ -497,6 +497,7 @@ body {
   }
 }
 .homepage-container .skyline {
+  width: 91%;
   margin-top: -16px;
   margin-bottom: -4px;
   height: 20px;
