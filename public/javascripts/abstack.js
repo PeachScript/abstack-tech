@@ -33,7 +33,7 @@
   if(text){
     setTimeout(function () {
       document.getElementById('animate-abstack-text').className += ' flipped';
-    }, 2600);
+    }, 2200);
   }
 })();
 
@@ -41,8 +41,10 @@
  * 返回顶部按钮与 LOGO 切换
  */
 ;(function () {
-  var scrollBtn = document.getElementById('scroll-flip-button'),
-      fliper = scrollBtn.parentNode;
+  var scrollBtn = document.getElementById('scroll-flip-button');
+  if(!scrollBtn)
+    return;
+  var fliper = scrollBtn.parentNode;
   window.addEventListener('scroll', function () {
     var scrollTop =  (window.pageYOffset || document.documentElement.scrollTop)  - (document.documentElement.clientTop || 0);
     if(scrollTop > 1000){
@@ -64,18 +66,70 @@
  */
 ;(function () {
   var header = document.getElementsByClassName('header')[0];
+
+  header.hide = function () {
+    if(header.className.indexOf('hide') == -1){
+      header.className += ' hide';
+    }
+  }
+
+  header.show = function () {
+    if(header.className.indexOf(' hide') > -1){
+      header.className = header.className.replace(' hide', '');
+    }
+  }
+
   if(document.getElementById('about-scroll-container')){
     onePageScroll('#about-scroll-container', {
       beforeMove: function (index) {
-        if(index > 1 && header.className.indexOf('hide') == -1)
-          header.className += ' hide';
+        if(index > 1)
+          header.hide();
       },
       afterMove: function (index) {
-        if(index == 1 && header.className.indexOf(' hide') > -1)
-          header.className = header.className.replace(' hide', '');
-        else if(header.className.indexOf('hide') == -1)
-          header.className += ' hide';
+        index *=1;
+
+        if(index == 1){
+          header.show();
+        }else{
+          header.hide();
+        }
+        switch(index){
+          case 2:
+            var video = document.querySelectorAll('#about-scroll-container video')[1];
+            if(video.isPlay)
+              break;
+            video.play();
+            video.isPlay = true;
+            break;
+        }
       }
     });
+  }
+})();
+
+/**
+ * 关于页面的视频高度计算部分
+ */
+;(function () {
+  var videos = document.querySelectorAll('.video-container video');
+
+  if(videos.length){
+    setVideoSize();
+    window.addEventListener('resize', setVideoSize);
+  }
+
+  function setVideoSize () {
+    var ratio = window.innerWidth / window.innerHeight,
+        isMoreThanGoldenRatio = ratio > 16 / 9;
+
+    for(var i = 0;i < videos.length;i++){
+      if(isMoreThanGoldenRatio){
+        videos[i].style.width = null;
+        videos[i].style.height = 'auto';
+      }else{
+        videos[i].style.height = null;
+        videos[i].style.width = 'auto';
+      }
+    }
   }
 })();

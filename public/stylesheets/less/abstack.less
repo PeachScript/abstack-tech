@@ -158,27 +158,25 @@ body{
           }
         }
       }
+      &.dark-navbar{
+        li{
+          a{
+            color: rgba(255,255,255,.3);
+            &:hover{
+              color: rgba(255,255,255,.6);
+            }
+          }
+          &.active{
+            &:before, &:after{
+              display: none;
+            }
+            a:after{
+              .background-image-2x('../images/navbar_dark_active.png', 70px, 65px);
+            }
+          }
+        }
+      }
     }
-  }
-}
-.gradient-header-fix{
-  &:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 147px;
-    background: url('../images/gradient_header_bg.png') repeat-x left top;
-  }
-  > *:first-child{
-    margin-top: -110px;
-  }
-  img{
-    margin-bottom: 50px;
-    width: 100%;
-    min-width: @content-width;
-    pointer-events: none;
   }
 }
 /*版权部分*/
@@ -530,71 +528,46 @@ body{
 
 /*关于我们*/
 #about-scroll-container{
+  margin-top: -110px;
   h2{
     font-size: 36px;
     line-height: 36px;
   }
   > section{
-    .clearfix;
+    overflow: hidden;
   }
-  // 概览页
-  .about-scroll-overview{
-    background: url('../images/about_header_bg.jpg') center top no-repeat;
-    background-size: auto 100%;
-    .about-overview-container{
+  // 过渡视频页
+  .video-container{
+    position: relative;
+    height: 100%;
+    z-index: 0;
+    video{
       position: absolute;
       top: 50%;
-      left: 0;
-      right: 0;
-      margin-top: -50px;
-      padding: 20px 0;
-      background-color: rgba(255,255,255,.8);
-      .opacity(0);
-      .transition(~'opacity .6s .3s, margin-top .6s .3s');
-      h2{
-        margin: 0 80px 0 20px;
-        float: left;
-        height: 80px;
-        color: @c-basic;
-      }
-      p{
-        font-size: 16px;
-        color: #666;
-        line-height: 22px;
-      }
-      h2,p{
-        position: relative;
-        top: 10px;
-        .opacity(0);
-        .transition(~'opacity .5s .8s, top .5s .8s');
-      }
-    }
-    &.ops-section.active{
-      .about-overview-container{
-        margin-top: -60px;
-        .opacity(100);
-        h2,p{
-          top: 0px;
-          .opacity(100);
-        }
-      }
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      pointer-events: none;
+      .transform(~'translateX(-50%) translateY(-50%)');
     }
   }
   // 团队页
   .about-scroll-team{
+    background-color: #222;
     h2{
-      color: #666666;
+      color: #555555;
     }
     .team-item{
       position: relative;
+      z-index: 2;
       top: 60px;
       float: left;
       cursor: pointer;
       .transition(background .3s);
-      .background-image-2x('../images/about_team.png', 1642px, 374px);
+      .background-image-2x('../images/about_team.png', 1657px, 390px);
       &:hover{
-        z-index: 1;
-        .background-image-2x('../images/about_team_active.png', 1642px, 374px);
+        z-index: 3!important;
+        .background-image-2x('../images/about_team_active.png', 1657px, 390px);
         .team-item-intro{
           bottom: 103%;
           .opacity(100);
@@ -603,86 +576,92 @@ body{
       }
       &.member-1{
         margin-top: 100px;
-        width: 100px;
-        height: 369px;
-        background-position: 0 -5px;
+        margin-left: -15px;
+        width: 116px;
+        height: 384px;
+        background-position: 0 -6px;
       }
       &.member-2{
+        z-index: 0;
         margin-top: 105px;
-        margin-left: -15px;
-        width: 95px;
-        height: 309px;
-        background-position: -129px -65px;
+        margin-left: -30px;
+        width: 109px;
+        height: 323px;
+        background-position: -130px -66px;
       }
       &.member-3{
         margin-top: 140px;
-        margin-left: -20px;
-        width: 103px;
-        height: 332px;
-        background-position: -253px -42px;
+        margin-left: -35px;
+        width: 117px;
+        height: 346px;
+        background-position: -254px -43px;
       }
       &.member-4{
         margin-top: 110px;
-        margin-left: -12px;
-        width: 130px;
-        height: 337px;
-        background-position: -385px -37px;
+        margin-left: -27px;
+        width: 145px;
+        height: 352px;
+        background-position: -390px -38px;
       }
       &.member-5{
+        z-index: 0;
         margin-top: 35px;
-        margin-left: -35px;
-        width: 98px;
-        height: 313px;
-        background-position: -544px -61px;
+        margin-left: -50px;
+        width: 113px;
+        height: 328px;
+        background-position: -545px -62px;
       }
       &.member-6{
         margin-top: 115px;
-        margin-left: -33px;
-        width: 111px;
-        height: 359px;
-        background-position: -671px -15px;
+        margin-left: -48px;
+        width: 126px;
+        height: 374px;
+        background-position: -672px -16px;
       }
       &.member-7{
         margin-top: 125px;
-        margin-left: -15px;
-        width: 109px;
-        height: 357px;
-        background-position: -811px -17px;
+        margin-left: -30px;
+        width: 125px;
+        height: 371px;
+        background-position: -811px -19px;
       }
       &.member-8{
+        z-index: 0;
         margin-top: 12px;
-        margin-left: -52px;
-        width: 102px;
-        height: 358px;
-        background-position: -949px -16px;
+        margin-left: -67px;
+        width: 116px;
+        height: 372px;
+        background-position: -949px -18px;
       }
       &.member-9{
         margin-top: 130px;
-        margin-left: -38px;
-        width: 100px;
-        height: 371px;
-        background-position: -1080px -3px;
+        margin-left: -52px;
+        width: 115px;
+        height: 386px;
+        background-position: -1081px -4px;
       }
       &.member-10{
+        z-index: 1;
         margin-top: 70px;
-        margin-left: -29px;
-        width: 118px;
-        height: 374px;
+        margin-left: -44px;
+        width: 133px;
+        height: 390px;
         background-position: -1209px 0;
       }
       &.member-11{
+        z-index: 0;
         margin-top: 0px;
-        margin-left: -46px;
-        width: 125px;
-        height: 349px;
-        background-position: -1356px -25px;
+        margin-left: -61px;
+        width: 140px;
+        height: 363px;
+        background-position: -1357px -26px;
       }
       &.member-12{
         margin-top: 100px;
-        margin-left: -29px;
-        width: 132px;
-        height: 361px;
-        background-position: -1510px -13px;
+        margin-left: -44px;
+        width: 146px;
+        height: 376px;
+        background-position: -1511px -14px;
       }
       .team-item-intro{
         @triangle-size: 10px;
@@ -691,9 +670,9 @@ body{
         bottom: 100%;
         width: 170px;
         padding: 10px;
-        color: @c-red;
-        background-color: #fff;
-        border: 2px solid @c-basic;
+        color: #fff;
+        background-color: #222;
+        border: 2px solid #fff;
         visibility: hidden;
         .border-radius(10px);
         .opacity(0);
@@ -710,12 +689,12 @@ body{
         }
         &:before{
           border: @triangle-size solid transparent;
-          border-top-color: @c-basic;
+          border-top-color: #fff;
         }
         &:after{
           margin-left: 4px;
           border: (@triangle-size - 4) solid transparent;
-          border-top-color: #fff;
+          border-top-color: #222;
         }
         h3{
           margin: 0 0 5px;
@@ -728,7 +707,7 @@ body{
           line-height: 18px;
         }
         a{
-          color: @c-red;
+          color: #fff;
           &:hover{
             color: @c-basic;
           }
@@ -738,15 +717,16 @@ body{
   }
   // 历程页
   .about-scroll-routes{
-    background: url('../images/about_routes_end.png') #2E343B repeat-x center bottom;
+    background: #222 center bottom;
+    .background-image-2x('../images/about_routes_end.png', 1366px, 173px, repeat-x);
     h2{
-      color: #fff;
+      color: #555555;
     }
     .timeline{
       @line-width: 4px;
       position: absolute;
       left: 50%;
-      top: 0;
+      top: 120px;
       bottom: 0;
       margin-left: -@line-width/2;
       width: @line-width;
@@ -779,7 +759,7 @@ body{
           display: block;
           width: @dot-size;
           height: @dot-size;
-          background-color: #2E343B;
+          background-color: #282828;
           border: @dot-border-size solid #fff;
           .border-radius(50%);
         }
