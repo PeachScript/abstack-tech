@@ -1,2 +1,3 @@
 node_modules/
-public/**/*.min.*
+public/javascripts/*.min.*
+public/stylesheets/*.min.*
