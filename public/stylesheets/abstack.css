@@ -48,6 +48,9 @@ body {
     background-size: 492px 558px;
   }
 }
+.hide {
+  display: none;
+}
 /*头部*/
 .header {
   position: relative;
