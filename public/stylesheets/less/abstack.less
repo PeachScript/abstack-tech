@@ -375,12 +375,22 @@ body{
     width: 50%;
     text-align: center;
     a{
+      position: relative;
       display: block;
       margin: 0 20px 50px;
       text-decoration: none;
       img{
         max-width: 100%;
         pointer-events: none;
+      }
+      img.project-active-pic{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        .opacity(0);
+        .transition(~'opacity .3s, visibility .3s');
+        visibility: hidden;
       }
       h2{
         margin: 20px 0 10px;
@@ -398,6 +408,10 @@ body{
         line-height: 18px;
       }
       &:hover{
+        img.project-active-pic{
+          .opacity(100);
+          visibility: visible;
+        }
         h2{
           color: @c-basic;
         }
@@ -407,6 +421,13 @@ body{
 }
 
 /*观点样式*/
+.viewpoint-header{
+  margin: 50px 0 100px;
+  .pos-center;
+  width: 493px;
+  height: 573px;
+  .background-image-2x('../images/viewpoint_header.jpg', 493px, 573px);
+}
 .viewpoint-item{
   margin: 30px 50px;
   .clearfix;
@@ -494,12 +515,12 @@ body{
     }
     .diamond{
       position: absolute;
-      top: 20px;
-      right: 98px;
-      width: 35px;
-      height: 38px;
-      .animation(diamond-producing linear 6s infinite);
-      .background-image-2x('../images/viewpoint_diamond.png', 35px, 38px);
+      top: -5px;
+      right: 92px;
+      width: 51px;
+      height: 57px;
+      .animation(diamond-producing ease-in-out .6s infinite alternate);
+      .background-image-2x('../images/viewpoint_diamond.png', 51px, 57px);
     }
     + h2{
       padding-top: 100px;
@@ -1027,7 +1048,7 @@ body{
 });
 .keyframes(sword-wave, {
   0%{
-    .transform(rotate(-10deg));
+    .transform(rotate(-65deg));
   }
   100%{
     .transform(rotate(0deg));
@@ -1049,48 +1070,9 @@ body{
 });
 .keyframes(diamond-producing, {
   0%{
-    top: 20px;
-  }
-  10%{
-    top: 25px;
-  }
-  20%{
-    top: 20px;
-  }
-  30%{
-    top: 25px;
-  }
-  40%{
-    top: 20px;
-  }
-  50%{
-    top: 25px;
-  }
-  66.6666%{
-    top: 20px;
-    right: 98px;
-    width: 35px;
-    height: 38px;
-    .background-image-2x('../images/viewpoint_diamond.png', 35px, 38px);
-  }
-  70%{
-    top: 10px;
-    right: 82px;
-    width: 51px;
-    height: 57px;
-    .background-image-2x('../images/viewpoint_diamond_active.png', 51px, 57px);
-  }
-  80%{
-    top: 20px;
-  }
-  90%{
-    top: 10px;
+    margin-top: 0;
   }
   100%{
-    top: 15px;
-    right: 82px;
-    width: 51px;
-    height: 57px;
-    .background-image-2x('../images/viewpoint_diamond_active.png', 51px, 57px);
+    margin-top: 10px;
   }
 });
