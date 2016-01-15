@@ -69,6 +69,7 @@ body {
   clear: both;
 }
 .header.hide {
+  display: block;
   visibility: hidden;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -839,6 +840,18 @@ body {
 #about-scroll-container .about-scroll-team h2 {
   color: #555555;
 }
+#about-scroll-container .about-scroll-team .container {
+  position: relative;
+  height: 100%;
+}
+#about-scroll-container .about-scroll-team .team-member-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: -330px;
+}
 #about-scroll-container .about-scroll-team .team-item {
   position: relative;
   z-index: 2;
@@ -1051,7 +1064,7 @@ body {
 #about-scroll-container .about-scroll-routes .timeline-item {
   position: relative;
   color: #fff;
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
 }
 #about-scroll-container .about-scroll-routes .timeline-item h3 {
@@ -1098,8 +1111,8 @@ body {
   left: -14px;
 }
 #about-scroll-container .about-scroll-routes .timeline-item.big-dot {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 #about-scroll-container .about-scroll-routes .timeline-item.big-dot:after {
   top: -4px;
@@ -1129,8 +1142,9 @@ body {
   }
 }
 #about-scroll-container .about-scroll-contact .container .contact-info {
-  padding: 30% 0 0 50px;
-  margin-left: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
 }
 #about-scroll-container .about-scroll-contact .container .contact-info h2 {
   margin: 0 0 15px;

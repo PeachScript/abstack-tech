@@ -53,6 +53,7 @@ body{
   .clearfix;
   .transition(~'visibility .3s, opacity .3s');
   &.hide{
+    display: block;
     visibility: hidden;
     .opacity(0);
   }
@@ -584,6 +585,18 @@ body{
     h2{
       color: #555555;
     }
+    .container{
+      position: relative;
+      height: 100%;
+    }
+    .team-member-container{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-top: -330px;
+    }
     .team-item{
       position: relative;
       z-index: 2;
@@ -766,7 +779,7 @@ body{
       @dot-border-size: 4px;
       position: relative;
       color: #fff;
-      margin-top: 40px;
+      margin-top: 30px;
       text-align: center;
       h3{
         margin: 0 0 10px;
@@ -809,7 +822,7 @@ body{
         }
       }
       &.big-dot{
-        @gap: 80px;
+        @gap: 60px;
         margin-top: @gap;
         margin-bottom: @gap;
         @size: @dot-size + 18;
@@ -836,8 +849,9 @@ body{
       .background-image-2x('../images/about_contact_map.jpg', 460px, 485px);
       background-position: left center;
       .contact-info{
-        padding: 30% 0 0 50px;
-        margin-left: 50%;
+        position: absolute;
+        top: 25%;
+        left: 50%;
         h2{
           margin: 0 0 15px;
           color: #666;
