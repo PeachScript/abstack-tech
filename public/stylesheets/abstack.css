@@ -781,6 +781,30 @@ body {
 #about-scroll-container {
   margin-top: -110px;
 }
+#about-scroll-container.loading:after {
+  content: attr(percent) '%';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: -20px;
+  display: block;
+  width: 280px;
+  height: 40px;
+  font-family: Georgia;
+  font-size: 26px;
+  text-align: center;
+  line-height: 35px;
+  color: #555;
+  text-indent: 110px;
+  background: url('../images/loading.png') no-repeat;
+  background-size: 100% auto;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
 #about-scroll-container h2 {
   font-size: 36px;
   line-height: 36px;

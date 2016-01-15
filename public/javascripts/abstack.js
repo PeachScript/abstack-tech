@@ -108,7 +108,7 @@
 })();
 
 /**
- * 关于页面的视频高度计算部分
+ * 关于页面的视频高度计算部分及 loading 部分
  */
 ;(function () {
   var videos = document.querySelectorAll('.video-container video');
@@ -132,4 +132,20 @@
       }
     }
   }
+
+  var firstVideo = videos[0],
+      container = document.getElementById('about-scroll-container');
+
+  firstVideo.addEventListener('progress', function () {
+    if(this.readyState){
+      var percent = parseInt(this.buffered.end(0) / this.duration * 100);
+
+      container.setAttribute('percent', percent);
+
+      if(percent == 100){
+        container.className = container.className.replace('loading', '');
+        firstVideo.play();
+      }
+    }
+  });
 })();

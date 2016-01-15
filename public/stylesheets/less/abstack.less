@@ -529,6 +529,30 @@ body{
 /*关于我们*/
 #about-scroll-container{
   margin-top: -110px;
+  &.loading{
+    &:after{
+      @width: 280px;
+      @height: @width/350*50;
+      content: attr(percent) '%';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -@width/2;
+      margin-top: -@height/2;
+      display: block;
+      width: @width;
+      height: @height;
+      font-family: Georgia;
+      font-size: 26px;
+      text-align: center;
+      line-height: @height - 5;
+      color: #555;
+      text-indent: 110px;
+      background: url('../images/loading.png') no-repeat;
+      background-size: 100% auto;
+      .border-radius(5px);
+    }
+  }
   h2{
     font-size: 36px;
     line-height: 36px;

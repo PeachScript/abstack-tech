@@ -16,10 +16,10 @@ block header
           a(href="/about") 关于
 
 block content
-  #about-scroll-container
+  #about-scroll-container.loading(percent="0")
     section
       .video-container
-        video(src="/videos/about_transition.mp4", width="100%", height="100%", autoplay="true")
+        video(src="/videos/about_transition.mp4", width="100%", height="100%")
     section
       .video-container
         video(src="/videos/about_introduction.mp4", width="100%", height="100%")
