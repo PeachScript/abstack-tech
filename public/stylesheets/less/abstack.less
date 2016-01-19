@@ -2,6 +2,8 @@
 @screen-desktop: 1024px;
 @screen-tablet: 768px;
 @content-width: 1000px;
+@m-mobile: ~'only screen and (max-width: 479px)';
+@m-tablet: ~'only screen and (min-width: 768px) and (max-width: 959px)';
 /*颜色表*/
 @c-basic: #E45755;
 @c-red: #EB7D7C;
@@ -28,6 +30,9 @@ body{
 .container{
   .pos-center;
   width: @content-width;
+  @media @m-tablet{
+    width: 768px;
+  }
 }
 .in-making{
   margin: 100px auto;
@@ -114,6 +119,9 @@ body{
       li{
         float: left;
         margin: 0 25px;
+        @media @m-tablet{
+          margin: 0 10px;
+        }
         &:hover{
           a{
             color: @c-red;
@@ -247,12 +255,22 @@ body{
     height: @item-height;
     .background-image-2x('../images/soldier.png', 68px, 104px);
     background-position: center bottom;
+    @media @m-tablet{
+      width: 104px;
+      height: @item-height - 160;
+    }
   }
   .abstack-text{
     @color: #2E343B;
     position: relative;
     width: 340px;
     height: @item-height;
+    @media @m-tablet{
+      margin: 0 -20px;
+      width: 287px;
+      .transform(scale(0.8));
+      height: @item-height - 160;
+    }
     &.flipped{
       .back {
         .transform(rotateY(0deg));
@@ -347,6 +365,12 @@ body{
     height: @item-height;
     .background-image-2x('../images/elephant_machine.png', 492px, 255px);
     background-position: center bottom;
+    @media @m-tablet{
+      width: 400px;
+      height: @item-height - 160;
+      background: '../images/elephant_machine.png' no-repeat;
+      background-size: 400px auto;
+    }
   }
   .skyline{
     width: 91%;
@@ -356,6 +380,9 @@ body{
     .background-image-2x('../images/skyline.png', 1366px, 19px);
     background-color: #fff;
     background-position: center bottom;
+    @media @m-tablet{
+      width: 103%;
+    }
   }
 }
 
@@ -425,14 +452,23 @@ body{
 
 /*观点样式*/
 .viewpoint-header{
-  margin: 50px 0 100px;
-  .pos-center;
+  margin: 50px auto 100px;
   width: 493px;
   height: 573px;
   .background-image-2x('../images/viewpoint_header.jpg', 493px, 573px);
+  @media @m-tablet{
+    margin: 30px auto 0;
+    width: 300px;
+    height: 350px;
+    background: url('../images/viewpoint_header.jpg') no-repeat;
+    background-size: 300px auto;
+  }
 }
 .viewpoint-item{
   margin: 30px 50px;
+  @media @m-tablet{
+    margin: 10px;
+  }
   .clearfix;
   h2{
     margin: 0 0 35px;
@@ -450,6 +486,13 @@ body{
     float: right;
     position: relative;
     margin-left: 20px;
+    @media @m-tablet{
+      margin: -30px -65px;
+      .transform(scale(0.6));
+      + h2{
+        padding-top: 120px!important;
+      }
+    }
     .viewpoint-item-pic{
       position: relative;
       z-index: 1;
@@ -475,6 +518,13 @@ body{
     position: relative;
     float: left;
     margin-right: 160px;
+    @media @m-tablet{
+      margin: -80px -65px -20px;
+      .transform(scale(0.6));
+      + h2{
+        padding-top: 50px!important;
+      }
+    }
     .viewpoint-item-pic{
       position: relative;
       z-index: 1;
@@ -500,6 +550,13 @@ body{
     position: relative;
     float: right;
     margin-left: 20px;
+    @media @m-tablet{
+      margin: -40px -65px -20px;
+      .transform(scale(0.6));
+      + h2{
+        padding-top: 60px!important;
+      }
+    }
     .viewpoint-item-pic{
       position: relative;
       z-index: 1;
@@ -613,6 +670,23 @@ body{
           bottom: 103%;
           .opacity(100);
           visibility: visible;
+        }
+      }
+      @media @m-tablet{
+        &.member-1,
+        &.member-2,
+        &.member-3,
+        &.member-4,
+        &.member-5,
+        &.member-6,
+        &.member-7,
+        &.member-8,
+        &.member-9,
+        &.member-10,
+        &.member-11,
+        &.member-12{
+          .transform(scale(0.8));
+          margin-right: -20px;
         }
       }
       &.member-1{
@@ -849,6 +923,10 @@ body{
       height: 100%;
       .background-image-2x('../images/about_contact_map.jpg', 460px, 485px);
       background-position: left center;
+      @media @m-tablet{
+        background: url('../images/about_contact_map.jpg') no-repeat left center;
+        background-size: 320px auto;
+      }
       .contact-info{
         position: absolute;
         top: 25%;

@@ -15,13 +15,13 @@
   }
 
   function load2xImg (src, img) {
-    var retianImg = new Image();
+    var retinaImg = new Image();
 
-    retianImg.onload = function () {
+    retinaImg.onload = function () {
       img.src = src;
     }
 
-    retianImg.src = src;
+    retinaImg.src = src;
   }
 })();
 
