@@ -136,6 +136,11 @@
   var firstVideo = videos[0],
       container = document.getElementById('about-scroll-container');
 
+  function completeVideoLoad () {
+    container.className = container.className.replace('loading', '');
+    firstVideo.play();
+  }
+
   if(firstVideo){
     firstVideo.addEventListener('progress', function () {
       var end = 0;
@@ -146,10 +151,9 @@
 
       container.setAttribute('percent', percent);
 
-      if(percent == 100){
-        container.className = container.className.replace('loading', '');
-        firstVideo.play();
-      }
-    });
+      percent == 100 && completeVideoLoad();
+    }, false);
+
+    firstVideo.addEventListener('loadeddata', completeVideoLoad, false);
   }
 })();
