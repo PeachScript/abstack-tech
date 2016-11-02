@@ -6,7 +6,7 @@ module.exports = function (grunt) {
       },
       files: [
         'public/*.js',
-        'views/*.jade'
+        'views/*.pug'
       ],
       css: {
         files: 'public/stylesheets/less/*.less',
